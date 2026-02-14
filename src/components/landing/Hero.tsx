@@ -37,19 +37,35 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           <div className="text-center lg:text-left space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
-            >
-              <Sparkles className="w-3 h-3 text-blue-600" />
-              Material 100% Prático e Editável
-            </motion.div>
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
+              >
+                <Sparkles className="w-3 h-3 text-blue-600" />
+                Material 100% Prático e Editável
+              </motion.div>
+
+              {/* Imagem acima da headline */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1 }}
+                className="flex justify-center lg:justify-start"
+              >
+                <img 
+                  src="/hero-headline-image.png" 
+                  alt="Mundo da Encadernação" 
+                  className="h-16 sm:h-24 w-auto object-contain"
+                />
+              </motion.div>
+            </div>
 
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.15 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight"
             >
               Transforme seu ateliê em uma <br className="hidden xl:block" />
