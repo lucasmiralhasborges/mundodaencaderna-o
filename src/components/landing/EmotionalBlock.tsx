@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, Clock, TrendingUp, Quote, Minus, ArrowRight, Target } from 'lucide-react';
+import { Heart, Sparkles, Clock, TrendingUp, Quote, ArrowRight, Target } from 'lucide-react';
 
 const EmotionalBlock = () => {
   return (
@@ -34,7 +34,7 @@ const EmotionalBlock = () => {
           >
             Paixão não sustenta <br className="hidden sm:block" />
             um <span className="text-rose-600">negócio sobrecarregado.</span>
-          </h2>
+          </motion.h2>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 items-start mb-32">
@@ -112,7 +112,7 @@ const EmotionalBlock = () => {
 
                 <div className="pt-8 border-t border-slate-200 flex items-center gap-4">
                   <div className="flex -space-x-2">
-                    {[1,2,3].map(i => (
+                    {[1, 2, 3].map(i => (
                       <div key={i} className="w-8 h-8 rounded-full bg-slate-200 border-2 border-slate-50"></div>
                     ))}
                   </div>
@@ -130,7 +130,6 @@ const EmotionalBlock = () => {
           viewport={{ once: true }}
           className="relative rounded-[4rem] bg-[#0B1222] p-12 sm:p-24 overflow-hidden"
         >
-          {/* Subtle light effect */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full"></div>
           
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
@@ -159,7 +158,7 @@ const EmotionalBlock = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
