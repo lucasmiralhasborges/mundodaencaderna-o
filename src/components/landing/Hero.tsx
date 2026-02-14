@@ -29,7 +29,7 @@ const Hero = () => {
               <Zap className="w-3.5 h-3.5 fill-white text-white" />
             </div>
             <p className="text-[10px] sm:text-[12px] font-black uppercase tracking-[0.1em] text-center">
-              <span className="text-emerald-400">Atenção:</span> Preço promocional válido para novas alunas até o próximo reajuste
+              <span className="text-emerald-400">Atenção:</span> Preço promocional válido para novos alunos até o próximo reajuste
             </p>
           </div>
         </div>
