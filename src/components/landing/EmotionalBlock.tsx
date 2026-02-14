@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '応募-motion';
 import { Sparkles, Heart, ArrowRight } from 'lucide-react';
 
 const EmotionalBlock = () => {
@@ -31,7 +31,7 @@ const EmotionalBlock = () => {
             Um momento de reflexão
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 leading-[1.15] tracking-tight">
-            Você não começou seu ateliê para viver cansada e sobrecarregada.
+            Você não começou seu ateliê para viver cansado e sobrecarregado.
           </h2>
         </motion.div>
 
@@ -79,7 +79,7 @@ const EmotionalBlock = () => {
           </div>
 
           <p>
-            Às vezes vê outras encadernadoras vendendo mais, postando novidades toda semana, crescendo rápido… Enquanto você sente que está sempre correndo atrás.
+            Às vezes vê outros encadernadores vendendo mais, postando novidades toda semana, crescendo rápido… Enquanto você sente que está sempre correndo atrás.
           </p>
 
           {/* Card de Transição/Diagnóstico */}
