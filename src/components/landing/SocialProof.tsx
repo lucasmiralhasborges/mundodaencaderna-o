@@ -45,11 +45,6 @@ const SocialProof = () => {
             Resultados Reais
           </motion.div>
           
-          <h2 className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.1] mb-6">
-            Histórias que inspiram <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">e transformam vidas.</span>
-          </h2>
-          
           <div className="flex flex-col items-center gap-3">
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
