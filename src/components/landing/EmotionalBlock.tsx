@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from '応募-motion';
+import { motion } from 'framer-motion';
 import { Sparkles, Heart, ArrowRight } from 'lucide-react';
 
 const EmotionalBlock = () => {
@@ -102,7 +102,7 @@ const EmotionalBlock = () => {
               </div>
             </div>
 
-            {/* BOTÃO OTIMIZADO (CONFORME IMAGEM) */}
+            {/* BOTÃO OTIMIZADO */}
             <div className="pt-12 sm:pt-20">
               <motion.button 
                 whileHover={{ scale: 1.03, y: -4 }}
@@ -117,8 +117,8 @@ const EmotionalBlock = () => {
                   <span className="text-white">Mundo da Encadernação</span> entrega.
                 </p>
                 
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/10 group-hover:bg-rose-500 group-hover:border-rose-500 transition-all relative z-10 shadow-lg group-hover:shadow-rose-500/40">
-                  <ArrowRight className="w-6 h-6 text-rose-300 group-hover:text-white transition-transform group-hover:translate-x-1" />
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/10 group-hover:bg-rose-50 group-hover:border-rose-50 transition-all relative z-10 shadow-lg group-hover:shadow-rose-500/40">
+                  <ArrowRight className="w-6 h-6 text-rose-300 group-hover:text-rose-600 transition-transform group-hover:translate-x-1" />
                 </div>
               </motion.button>
             </div>
