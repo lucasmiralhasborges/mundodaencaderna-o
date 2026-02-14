@@ -79,7 +79,7 @@ const EmotionalBlock = () => {
           </div>
 
           <p>
-            Às vezes vê outros encadernadores vendendo mais, postando novidades toda semana, crescendo rápido… Enquanto você sente que está sempre correndo atrás.
+            Às vezes vê outros encadernadores vendendo mais, postando novidades toda semana, crescendo rápido… Enquanto você sente que está sempre correndo atrás
           </p>
 
           {/* Card de Transição/Diagnóstico */}
