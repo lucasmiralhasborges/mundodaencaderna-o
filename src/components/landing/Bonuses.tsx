@@ -1,53 +1,111 @@
 "use client";
 
 import React from 'react';
-import { Gift, Video, Box, Heart, Camera } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Gift, Video, Box, Heart, Camera, Zap, CheckCircle2 } from 'lucide-react';
 
 const Bonuses = () => {
   const bonuses = [
     {
       title: "Curso Silhouette Studio",
-      icon: <Video />,
-      desc: "Domine a ferramenta com vídeo aulas direto ao ponto."
+      icon: <Video className="w-6 h-6" />,
+      desc: "Domine a ferramenta do zero ao avançado com vídeo aulas direto ao ponto.",
+      value: "R$ 97,00"
     },
     {
       title: "Embalagens Pro",
-      icon: <Box />,
-      desc: "Encante seus clientes desde o primeiro contato."
+      icon: <Box className="w-6 h-6" />,
+      desc: "Aprenda a criar embalagens que encantam seus clientes desde o primeiro contato.",
+      value: "R$ 47,00"
     },
     {
       title: "Mimos Corporativos",
-      icon: <Heart />,
-      desc: "Aumente suas vendas atendendo grandes empresas."
+      icon: <Heart className="w-6 h-6" />,
+      desc: "Estratégias para aumentar suas vendas atendendo grandes empresas e eventos.",
+      value: "R$ 67,00"
     },
     {
       title: "Pack Instagram",
-      icon: <Camera />,
-      desc: "Artes prontas para stories que vendem sozinhos."
+      icon: <Camera className="w-6 h-6" />,
+      desc: "Templates prontos para stories e posts que vendem seus produtos sozinhos.",
+      value: "R$ 37,00"
     }
   ];
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="py-32 px-4 bg-white relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-emerald-50/50 blur-[100px] rounded-full -z-10"></div>
+      
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            🎁 BÔNUS EXCLUSIVOS
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest border border-emerald-100 mb-6"
+          >
+            <Gift className="w-4 h-4" />
+            Presentes Exclusivos
+          </motion.div>
+          
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+            Você ainda leva <span className="text-emerald-600">4 Bônus VIP</span> <br className="hidden sm:block" />
+            para acelerar seus resultados
           </h2>
-          <p className="text-slate-500 text-lg">Tudo o que você precisa para um negócio profissional.</p>
+          <p className="text-slate-500 text-lg font-medium max-w-2xl mx-auto">
+            Mais do que apenas arquivos, entregamos o conhecimento necessário para você transformar seu ateliê em um negócio lucrativo.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {bonuses.map((bonus, index) => (
-            <div key={index} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 transition-all text-center">
-              <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-emerald-600 mx-auto mb-6">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              className="group bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(16,185,129,0.15)] hover:border-emerald-100 transition-all flex flex-col h-full"
+            >
+              <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                 {bonus.icon}
               </div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">{bonus.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{bonus.desc}</p>
-            </div>
+              
+              <h3 className="text-xl font-black text-slate-900 mb-3 tracking-tight">{bonus.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-grow">
+                {bonus.desc}
+              </p>
+              
+              <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter line-through">De {bonus.value}</span>
+                  <span className="text-sm font-black text-emerald-600 uppercase tracking-widest">GRÁTIS HOJE</span>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Value Footer */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-16 text-center"
+        >
+          <div className="inline-flex items-center gap-3 bg-[#0B1222] text-white px-8 py-4 rounded-2xl shadow-xl">
+            <Zap className="w-5 h-5 text-emerald-400 fill-emerald-400" />
+            <p className="font-bold text-sm sm:text-base">
+              Total em Bônus: <span className="text-emerald-400 line-through mr-2">R$ 248,00</span>
+              <span className="text-white">LEVANDO TUDO POR R$ 0,00</span>
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
