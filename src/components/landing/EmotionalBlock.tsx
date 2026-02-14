@@ -59,7 +59,7 @@ const EmotionalBlock = () => {
           </div>
         </motion.div>
 
-        {/* Texto Narrativo */}
+        {/* Texto Narrativo com Ritmo */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -82,8 +82,8 @@ const EmotionalBlock = () => {
             Às vezes vê outras encadernadoras vendendo mais, postando novidades toda semana, crescendo rápido… Enquanto você sente que está sempre correndo atrás.
           </p>
 
-          {/* Card de Diagnóstico com Botão Otimizado */}
-          <div className="bg-slate-900 text-white rounded-[2.5rem] sm:rounded-[4rem] p-8 sm:p-16 my-12 sm:my-20 relative overflow-hidden text-center shadow-[0_30px_60px_rgba(0,0,0,0.15)]">
+          {/* Card de Transição/Diagnóstico */}
+          <div className="bg-slate-900 text-white rounded-[2.5rem] sm:rounded-[4rem] p-8 sm:p-20 my-12 sm:my-20 relative overflow-hidden text-center shadow-[0_30px_60px_rgba(0,0,0,0.15)]">
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-rose-500/10 blur-[50px] rounded-full"></div>
             
             <p className="text-rose-400 font-black uppercase tracking-[0.3em] text-[10px] mb-6">O diagnóstico real</p>
@@ -94,7 +94,7 @@ const EmotionalBlock = () => {
               <p className="text-2xl sm:text-5xl font-black leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-300">É falta de estrutura.</p>
             </div>
 
-            <div className="pt-8 sm:pt-12 border-t border-white/10 space-y-4">
+            <div className="pt-8 sm:pt-12 border-t border-white/10 space-y-4 sm:space-y-6">
               <p className="text-slate-400 font-medium text-sm sm:text-lg">Nenhum ateliê cresce no improviso.</p>
               <div className="space-y-1">
                 <p className="text-slate-200 font-bold text-lg sm:text-xl">Você não precisa trabalhar mais.</p>
@@ -102,23 +102,23 @@ const EmotionalBlock = () => {
               </div>
             </div>
 
-            {/* BOTÃO OTIMIZADO: Ajustado preenchimento e layout para não ficar "gigante" */}
-            <div className="pt-10 sm:pt-16">
+            {/* BOTÃO OTIMIZADO (CONFORME IMAGEM) */}
+            <div className="pt-12 sm:pt-20">
               <motion.button 
                 whileHover={{ scale: 1.03, y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative w-full max-w-sm mx-auto p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md transition-all flex items-center justify-between gap-4 hover:bg-white/10 hover:border-rose-500/30 shadow-2xl"
+                className="group relative w-full max-w-md mx-auto p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md transition-all flex flex-col items-center gap-6 hover:bg-white/10 hover:border-rose-500/30"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
                 
-                <p className="text-rose-100 font-bold text-sm sm:text-base leading-tight text-left relative z-10">
-                  Descubra o sistema do <br />
-                  <span className="text-white font-black">Mundo da Encadernação</span>
+                <p className="text-rose-300 font-black text-lg sm:text-xl leading-snug tracking-tight text-center relative z-10">
+                  E é exatamente isso que o <br />
+                  <span className="text-white">Mundo da Encadernação</span> entrega.
                 </p>
                 
-                <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 group-hover:bg-rose-500 group-hover:border-rose-500 transition-all relative z-10 shadow-lg group-hover:shadow-rose-500/40">
-                  <ArrowRight className="w-5 h-5 text-rose-300 group-hover:text-white transition-transform group-hover:translate-x-1" />
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/10 group-hover:bg-rose-500 group-hover:border-rose-500 transition-all relative z-10 shadow-lg group-hover:shadow-rose-500/40">
+                  <ArrowRight className="w-6 h-6 text-rose-300 group-hover:text-white transition-transform group-hover:translate-x-1" />
                 </div>
               </motion.button>
             </div>
