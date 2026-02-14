@@ -15,9 +15,13 @@ const Hero = () => {
     "Sem material ultrapassado"
   ];
 
+  const scrollToPricing = () => {
+    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative pt-12 pb-16 lg:pt-24 lg:pb-32 overflow-hidden bg-white">
-      {/* Barra de Oferta (Topo) */}
+      {/* Barra de Oferta */}
       <div className="absolute top-0 left-0 w-full bg-[#0F172A] py-2.5 px-4 z-20 border-b border-white/5">
         <div className="max-w-7xl mx-auto flex justify-center items-center text-white">
           <div className="flex items-center gap-2">
@@ -32,7 +36,6 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
-          {/* Coluna Esquerda: Conteúdo */}
           <div className="text-center lg:text-left space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -64,7 +67,6 @@ const Hero = () => {
               Pare de perder horas criando do zero. Tenha acesso à biblioteca definitiva com mais de 100.000 arquivos organizados.
             </motion.p>
 
-            {/* Benefícios em Grid Compacto */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,19 +87,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="space-y-4"
+              className="max-w-xs mx-auto lg:mx-0"
             >
-              <CTAButton className="w-full sm:max-w-xs !py-5 !text-lg shadow-xl">
-                QUERO MEU ACESSO AGORA
+              <CTAButton 
+                onClick={scrollToPricing}
+                subtext="Acesso imediato liberado"
+              >
+                QUERO MEU ACESSO
               </CTAButton>
-              <div className="flex justify-center lg:justify-start gap-4 text-[10px] font-black uppercase tracking-widest text-emerald-600">
-                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3" /> Acesso Imediato</span>
-                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3" /> Material Digital</span>
-              </div>
             </motion.div>
           </div>
 
-          {/* Coluna Direita: Visual e Prova Social */}
           <div className="relative space-y-8">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -134,7 +134,7 @@ const Hero = () => {
                 ))}
               </div>
               <div className="flex justify-center gap-0.5 mb-2">
-                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />)}
+                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
               </div>
               <p className="text-slate-600 text-[11px] font-medium text-center">
                 +15.000 alunas com <span className="text-slate-900 font-black">resultados reais</span>.

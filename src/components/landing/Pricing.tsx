@@ -3,7 +3,7 @@
 import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Star, Trophy, TrendingUp, X, Users } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Trophy, TrendingUp, X, Users, Star } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
@@ -21,7 +21,7 @@ const Pricing = () => {
         "Sem acesso aos Bônus VIP"
       ],
       highlight: false,
-      buttonText: "QUERO O BÁSICO"
+      buttonText: "QUERO O ESSENCIAL"
     },
     {
       name: "Plano Premium VIP",
@@ -37,33 +37,24 @@ const Pricing = () => {
         "Pack de Artes Prontas para Vendas"
       ],
       highlight: true,
-      buttonText: "QUERO O PREMIUM COMPLETO"
+      buttonText: "QUERO O PREMIUM VIP"
     }
   ];
 
   return (
     <section className="py-32 px-4 bg-white overflow-hidden relative">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none -z-10">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50/50 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50/50 blur-[120px] rounded-full"></div>
-      </div>
-
       <div className="max-w-6xl mx-auto text-center">
-        {/* Refined Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-24 flex flex-col items-center"
         >
-          {/* Top Badge - Premium Glass Look */}
           <div className="inline-flex items-center gap-2 bg-blue-50/80 backdrop-blur-sm text-blue-700 px-6 py-2.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] mb-10 border border-blue-100 shadow-sm">
             <TrendingUp className="w-4 h-4" />
             Investimento com Retorno Imediato
           </div>
           
-          {/* Headline - High Impact Typography */}
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-8 leading-[1.05] tracking-tight max-w-4xl">
             Menos de <br className="sm:hidden" />
             <span className="relative inline-block px-2">
@@ -79,15 +70,8 @@ const Pricing = () => {
             </span> <br />
             para profissionalizar <br className="hidden sm:block" /> seu negócio.
           </h2>
-          
-          <div className="max-w-xl mx-auto space-y-8">
-            <p className="text-slate-500 text-lg sm:text-xl font-medium leading-relaxed">
-              Escolha o plano que vai levar sua <span className="text-slate-900 font-bold">encadernação para o próximo nível.</span>
-            </p>
-          </div>
         </motion.div>
         
-        {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <motion.div 
@@ -99,12 +83,12 @@ const Pricing = () => {
               className={`relative rounded-[3rem] p-8 sm:p-12 flex flex-col transition-all duration-500 ${
                 plan.highlight 
                 ? 'bg-white shadow-[0_40px_80px_rgba(16,185,129,0.12)] border-[3px] border-emerald-500 z-10' 
-                : 'bg-slate-50 shadow-xl border border-slate-200 opacity-90'
+                : 'bg-slate-50 shadow-xl border border-slate-200'
               }`}
             >
               {plan.highlight && (
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-8 py-3 rounded-full text-xs font-black flex items-center gap-2 shadow-xl whitespace-nowrap uppercase tracking-widest">
-                  <Trophy className="w-4 h-4 fill-white" /> Recomendado por Especialistas
+                  <Trophy className="w-4 h-4 fill-white" /> Recomendado
                 </div>
               )}
 
@@ -115,11 +99,6 @@ const Pricing = () => {
                 
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-slate-400 line-through text-xl font-medium">R$ {plan.originalPrice}</span>
-                  {plan.highlight && (
-                    <span className="bg-emerald-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-tighter">
-                      ECONOMIZE R$ 177,10
-                    </span>
-                  )}
                 </div>
 
                 <div className="flex items-baseline gap-1">
@@ -128,26 +107,12 @@ const Pricing = () => {
                     {plan.price.split(',')[0]}
                     <span className="text-4xl">,{plan.price.split(',')[1]}</span>
                   </span>
-                  <span className="text-slate-400 font-bold ml-2">/único</span>
                 </div>
                 
-                <div className="mt-4 flex items-center gap-2 text-emerald-600 font-black italic text-xl">
-                  <div className="w-8 h-px bg-emerald-200" />
+                <div className="mt-4 text-emerald-600 font-black italic text-xl">
                   {plan.installments}
                 </div>
               </div>
-
-              {/* Texto Estratégico Compacto */}
-              {plan.highlight && (
-                <div className="mb-6 p-3 bg-blue-50/60 border border-blue-100/50 rounded-2xl text-left flex items-center gap-3 group/highlight transition-colors">
-                  <div className="bg-white rounded-xl p-2 shadow-sm border border-blue-100 flex-shrink-0">
-                    <Users className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <p className="text-slate-600 text-[11px] sm:text-xs font-semibold leading-tight">
-                    <span className="text-blue-700 font-extrabold">97% dos alunos</span> escolhem o Premium pelo <span className="text-blue-900 font-black">Acesso Vitalício</span> e <span className="text-blue-900 font-black">Atualizações</span>.
-                  </p>
-                </div>
-              )}
 
               <div className="flex-grow">
                 <ul className="space-y-4 mb-10 text-left border-t border-slate-100 pt-8">
@@ -156,21 +121,11 @@ const Pricing = () => {
                     return (
                       <li key={i} className="flex items-start gap-4 text-slate-600">
                         <div className={`mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
-                          isMissing 
-                          ? 'bg-slate-200 text-slate-400' 
-                          : plan.highlight ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-200 text-slate-400'
+                          isMissing ? 'bg-slate-200 text-slate-400' : 'bg-emerald-100 text-emerald-600'
                         }`}>
-                          {isMissing ? (
-                            <X className="w-3 h-3 stroke-[3]" />
-                          ) : (
-                            <Check className="w-3.5 h-3.5 stroke-[3]" />
-                          )}
+                          {isMissing ? <X className="w-3 h-3 stroke-[3]" /> : <Check className="w-3.5 h-3.5 stroke-[3]" />}
                         </div>
-                        <span className={`text-sm leading-tight ${
-                          plan.highlight && (feature.includes("VITALÍCIO") || feature.includes("100.000") || feature.includes("VIP") || feature.includes("ATUALIZAÇÕES"))
-                          ? 'font-black text-slate-900' 
-                          : isMissing ? 'text-slate-400 line-through opacity-60' : 'font-semibold'
-                        }`}>
+                        <span className={`text-sm leading-tight ${isMissing ? 'text-slate-400 line-through opacity-60' : 'font-semibold'}`}>
                           {feature}
                         </span>
                       </li>
@@ -179,44 +134,14 @@ const Pricing = () => {
                 </ul>
               </div>
 
-              <div className="mt-auto">
-                <CTAButton className={`w-full !py-5 !text-xl shadow-2xl ${
-                  !plan.highlight && 'bg-slate-900 hover:bg-slate-800 !from-slate-900 !to-slate-800'
-                }`}>
-                  {plan.buttonText}
-                </CTAButton>
-              </div>
-
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                  <ShieldCheck className="w-4 h-4 text-emerald-500" /> Compra Segura
-                </div>
-                <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                  <Zap className="w-4 h-4 text-blue-500" /> Acesso na Hora
-                </div>
-              </div>
+              <CTAButton 
+                variant={plan.highlight ? 'primary' : 'secondary'}
+                subtext={plan.highlight ? "O plano preferido das alunas" : "Acesso imediato"}
+              >
+                {plan.buttonText}
+              </CTAButton>
             </motion.div>
           ))}
-        </div>
-
-        {/* Testimonial Bar Below Plans */}
-        <div className="mt-20 max-w-3xl mx-auto p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100">
-           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <div className="flex -space-x-3">
-                {[1,2,3,4].map(i => (
-                  <img key={i} src={`https://i.pravatar.cc/100?img=${i+20}`} className="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="User" />
-                ))}
-                <div className="w-12 h-12 rounded-full border-4 border-white bg-blue-600 flex items-center justify-center text-white text-[10px] font-bold">+15k</div>
-              </div>
-              <div className="text-left">
-                <div className="flex gap-1 mb-1">
-                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                </div>
-                <p className="text-slate-600 text-sm font-bold">
-                  "O melhor investimento que fiz para o meu ateliê em 2024"
-                </p>
-              </div>
-           </div>
         </div>
       </div>
     </section>
