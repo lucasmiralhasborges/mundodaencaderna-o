@@ -3,7 +3,7 @@
 import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Infinity, Zap, Star, Trophy, Users, Rocket } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Star, Trophy, Users, Rocket } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
@@ -34,9 +34,7 @@ const Pricing = () => {
         "ATUALIZAÇÕES SEMANAIS (Novidades 2026)",
         "Todos os BÔNUS (Silhouette, Instagram, etc)",
         "Comunidade VIP de Alunas",
-        "Pack de Artes Prontas para Vendas",
-        "Suporte Prioritário via WhatsApp",
-        "Certificado de Aluna Destaque"
+        "Pack de Artes Prontas para Vendas"
       ],
       highlight: true,
       buttonText: "QUERO O PREMIUM COMPLETO"
