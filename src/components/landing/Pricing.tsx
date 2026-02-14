@@ -137,14 +137,14 @@ const Pricing = () => {
                 </div>
               </div>
 
-              {/* Texto Estratégico Adicionado no Plano Premium */}
+              {/* Texto Estratégico Remodelado com Design Profissional */}
               {plan.highlight && (
-                <div className="mb-10 p-5 bg-blue-50/50 border border-blue-100 rounded-2xl text-left flex items-start gap-4">
-                  <div className="bg-blue-600 rounded-full p-2 mt-1 flex-shrink-0">
-                    <Users className="w-4 h-4 text-white" />
+                <div className="mb-10 p-5 bg-blue-50/40 border border-blue-100/50 rounded-[2rem] text-left flex items-center gap-5 group/highlight transition-colors hover:bg-blue-50/60">
+                  <div className="bg-white rounded-2xl p-3 shadow-sm border border-blue-100 flex-shrink-0 transition-transform group-hover/highlight:scale-110">
+                    <Users className="w-5 h-5 text-blue-600" />
                   </div>
-                  <p className="text-blue-900 text-sm font-bold leading-tight">
-                    97% escolhem o Premium porque é o único com <span className="text-blue-700 underline decoration-blue-300">acesso vitalício</span> e <span className="text-blue-700 underline decoration-blue-300">atualizações semanais</span>.
+                  <p className="text-slate-600 text-[13px] sm:text-sm font-medium leading-relaxed">
+                    <span className="text-blue-700 font-extrabold">97% das alunas</span> optam pelo Premium pela exclusividade do <span className="text-blue-900 font-black">Acesso Vitalício</span> e <span className="text-blue-900 font-black">Atualizações Semanais</span>.
                   </p>
                 </div>
               )}
