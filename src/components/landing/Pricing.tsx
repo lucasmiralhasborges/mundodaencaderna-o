@@ -42,7 +42,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-32 px-4 bg-white overflow-hidden relative">
+    <section className="py-32 px-6 sm:px-8 bg-white relative">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const Pricing = () => {
           </h2>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <motion.div 
               key={index}
@@ -87,7 +87,7 @@ const Pricing = () => {
               }`}
             >
               {plan.highlight && (
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-8 py-3 rounded-full text-xs font-black flex items-center gap-2 shadow-xl whitespace-nowrap uppercase tracking-widest">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-8 py-3 rounded-full text-[10px] sm:text-xs font-black flex items-center gap-2 shadow-xl whitespace-nowrap uppercase tracking-widest z-20">
                   <Trophy className="w-4 h-4 fill-white" /> Recomendado
                 </div>
               )}
