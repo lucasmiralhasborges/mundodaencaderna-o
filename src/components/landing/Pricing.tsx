@@ -3,7 +3,7 @@
 import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Star, Trophy, Users, Rocket, TrendingUp } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Star, Trophy, TrendingUp } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
@@ -50,38 +50,55 @@ const Pricing = () => {
       </div>
 
       <div className="max-w-6xl mx-auto text-center">
+        {/* Refined Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-24 flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-6 border border-blue-100">
+          {/* Top Badge - Premium Glass Look */}
+          <div className="inline-flex items-center gap-2 bg-blue-50/80 backdrop-blur-sm text-blue-700 px-6 py-2.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] mb-10 border border-blue-100 shadow-sm">
             <TrendingUp className="w-4 h-4" />
             Investimento com Retorno Imediato
           </div>
           
-          <h2 className="text-4xl sm:text-6xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
-            Menos de <span className="relative inline-block">
-              <span className="relative z-10 text-emerald-600">R$ 0,70 por dia</span>
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-emerald-100 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
-              </svg>
+          {/* Headline - High Impact Typography */}
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-8 leading-[1.05] tracking-tight max-w-4xl">
+            Menos de <br className="sm:hidden" />
+            <span className="relative inline-block px-2">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">
+                R$ 0,70 por dia
+              </span>
+              <motion.span 
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="absolute bottom-2 left-0 h-[30%] bg-emerald-100/60 -z-10 rounded-sm"
+              />
             </span> <br />
-            para profissionalizar seu negócio.
+            para profissionalizar <br className="hidden sm:block" /> seu negócio.
           </h2>
           
-          <div className="max-w-2xl mx-auto space-y-4">
+          <div className="max-w-xl mx-auto space-y-8">
             <p className="text-slate-500 text-lg sm:text-xl font-medium leading-relaxed">
-              Escolha o plano que vai levar sua encadernação para o próximo nível. 
+              Escolha o plano que vai levar sua <span className="text-slate-900 font-bold">encadernação para o próximo nível.</span>
             </p>
-            <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-2xl font-bold text-sm border border-emerald-100">
-              <Star className="w-4 h-4 fill-emerald-600" />
+            
+            {/* Bottom Badge - Social Proof Highlighter */}
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 px-6 py-3 rounded-2xl font-extrabold text-sm border border-emerald-100 shadow-sm"
+            >
+              <div className="bg-emerald-500 rounded-full p-1">
+                <Star className="w-3 h-3 fill-white text-white" />
+              </div>
               O plano Premium é o favorito de 97% das nossas alunas
-            </div>
+            </motion.div>
           </div>
         </motion.div>
         
+        {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <motion.div 
@@ -172,6 +189,7 @@ const Pricing = () => {
           ))}
         </div>
 
+        {/* Testimonial Bar Below Plans */}
         <div className="mt-20 max-w-3xl mx-auto p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100">
            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <div className="flex -space-x-3">
