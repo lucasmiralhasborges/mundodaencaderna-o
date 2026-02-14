@@ -4,6 +4,7 @@ import React from 'react';
 import Hero from '@/components/landing/Hero';
 import PainPoints from '@/components/landing/PainPoints';
 import Solution from '@/components/landing/Solution';
+import SocialProof from '@/components/landing/SocialProof';
 import Bonuses from '@/components/landing/Bonuses';
 import Pricing from '@/components/landing/Pricing';
 import Guarantee from '@/components/landing/Guarantee';
@@ -52,6 +53,7 @@ const Index = () => {
 
         <PainPoints />
         <Solution />
+        <SocialProof />
         <Bonuses />
         
         <div id="pricing">
