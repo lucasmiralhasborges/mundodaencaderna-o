@@ -27,17 +27,6 @@ const Index = () => {
       {/* Scroll Progress Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-emerald-500 origin-left z-[60]" style={{ scaleX }} />
 
-      {/* Header Premium */}
-      <header className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md z-50 py-4 px-6 border-b border-slate-200/50 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">M</div>
-          <span className="text-lg font-extrabold text-slate-900 tracking-tight hidden sm:inline-block">Mundo da Encadernação</span>
-        </div>
-        <button className="text-xs sm:text-sm font-extrabold bg-slate-900 text-white px-5 py-2.5 rounded-xl hover:bg-slate-800 transition-all shadow-lg shadow-slate-200">
-          COMEÇAR AGORA
-        </button>
-      </header>
-
       <main className="overflow-x-hidden">
         <Hero />
         
