@@ -53,8 +53,10 @@ const Index = () => {
 
         <PainPoints />
         <Solution />
-        <SocialProof />
         <Bonuses />
+        
+        {/* Social Proof positioned right before Pricing */}
+        <SocialProof />
         
         <div id="pricing">
           <Pricing />
