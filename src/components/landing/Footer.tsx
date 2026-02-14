@@ -56,24 +56,13 @@ const Footer = () => {
 
           {/* Security & Payment */}
           <div>
-            <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Segurança e Pagamento</h4>
+            <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Segurança</h4>
             <div className="space-y-6">
               <div className="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3">
                 <Lock className="w-5 h-5 text-emerald-500" />
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">Ambiente Seguro</p>
                   <p className="text-xs font-bold text-slate-700">SSL 256-bit Encrypted</p>
-                </div>
-              </div>
-              
-              <div>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Aceitamos</p>
-                <div className="flex flex-wrap gap-2">
-                  {/* Payment Icons Placeholder */}
-                  <div className="h-6 w-10 bg-white border border-slate-200 rounded flex items-center justify-center text-[8px] font-bold text-slate-400 italic">VISA</div>
-                  <div className="h-6 w-10 bg-white border border-slate-200 rounded flex items-center justify-center text-[8px] font-bold text-slate-400 italic">MASTER</div>
-                  <div className="h-6 w-10 bg-white border border-slate-200 rounded flex items-center justify-center text-[8px] font-bold text-slate-400 italic font-black">PIX</div>
-                  <div className="h-6 w-10 bg-white border border-slate-200 rounded flex items-center justify-center text-[8px] font-bold text-slate-400 italic">ELO</div>
                 </div>
               </div>
 
