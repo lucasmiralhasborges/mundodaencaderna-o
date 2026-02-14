@@ -2,121 +2,177 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, Clock, TrendingUp } from 'lucide-react';
+import { Heart, Sparkles, Clock, TrendingUp, Quote, Minus } from 'lucide-react';
 
 const EmotionalBlock = () => {
   return (
-    <section className="py-32 px-4 bg-[#FFF9F9] relative overflow-hidden">
-      {/* Elementos decorativos sutis */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-100/20 blur-[120px] rounded-full -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50/30 blur-[100px] rounded-full -z-10"></div>
+    <section className="py-32 px-4 bg-[#FFFDFD] relative overflow-hidden">
+      {/* Elementos de Design Premium - Fundo */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-rose-50/40 blur-[150px] rounded-full -z-10 translate-x-1/4 -translate-y-1/4"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50/30 blur-[130px] rounded-full -z-10 -translate-x-1/4 translate-y-1/4"></div>
+      
+      {/* Pattern de malha sutil para textura */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-24 relative"
         >
-          <div className="inline-flex items-center gap-2 bg-white text-rose-500 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-sm border border-rose-50/50 mb-10">
-            <Heart className="w-3.5 h-3.5 fill-rose-500" />
-            Um momento de clareza
+          <div className="inline-flex items-center gap-3 bg-white border border-rose-100/60 px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.3em] text-rose-500 shadow-sm mb-12">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+            </span>
+            Momento de Reflexão
           </div>
           
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight max-w-5xl mx-auto">
             Você não começou seu ateliê para <br className="hidden sm:block" />
-            viver <span className="text-rose-500">cansada e sobrecarregada.</span>
+            viver <span className="relative inline-block">
+              <span className="relative z-10 text-rose-500">cansada e sobrecarregada.</span>
+              <motion.span 
+                initial={{ width: 0 }}
+                whileInView={{ width: '100%' }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="absolute bottom-3 left-0 h-4 bg-rose-50 -z-10 rounded-full"
+              ></motion.span>
+            </span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-start">
-          {/* Lado Esquerdo - O Sonho */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-stretch mb-32">
+          {/* Lado Esquerdo - O Propósito (O que era pra ser) */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="relative p-10 sm:p-14 bg-white rounded-[3.5rem] border border-slate-100 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.03)]"
           >
-            <p className="text-xl font-bold text-slate-800 border-l-4 border-rose-200 pl-6 py-2">
-              Você começou porque queria:
-            </p>
-            <div className="space-y-5">
-              {[
-                { text: "Trabalhar com o que ama", icon: <Heart className="w-5 h-5" /> },
-                { text: "Ter sua própria renda", icon: <TrendingUp className="w-5 h-5" /> },
-                { text: "Sentir orgulho do que cria", icon: <Sparkles className="w-5 h-5" /> },
-                { text: "Ter liberdade de tempo", icon: <Clock className="w-5 h-5" /> }
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-2xl bg-white shadow-sm border border-rose-50 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
-                    {item.icon}
-                  </div>
-                  <span className="text-lg font-bold text-slate-600 group-hover:text-slate-900 transition-colors">
-                    {item.text}
-                  </span>
-                </div>
-              ))}
+            <div className="absolute -top-6 -left-6 w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center text-rose-200">
+              <Quote className="w-10 h-10 fill-current rotate-180" />
+            </div>
+
+            <div className="relative z-10 space-y-10">
+              <div className="space-y-2">
+                <span className="text-rose-500 font-black text-xs uppercase tracking-widest flex items-center gap-2">
+                  <Minus className="w-4 h-4" /> O Ponto de Partida
+                </span>
+                <p className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight">
+                  No início, havia um sonho:
+                </p>
+              </div>
+
+              <div className="grid gap-6">
+                {[
+                  { text: "Trabalhar com o que ama", icon: <Heart className="w-5 h-5" />, color: "bg-rose-50 text-rose-500" },
+                  { text: "Ter sua própria renda", icon: <TrendingUp className="w-5 h-5" />, color: "bg-blue-50 text-blue-500" },
+                  { text: "Sentir orgulho do que cria", icon: <Sparkles className="w-5 h-5" />, color: "bg-amber-50 text-amber-500" },
+                  { text: "Ter liberdade de tempo", icon: <Clock className="w-5 h-5" />, color: "bg-emerald-50 text-emerald-500" }
+                ].map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    whileHover={{ x: 10 }}
+                    className="flex items-center gap-5 p-4 rounded-3xl hover:bg-slate-50 transition-colors cursor-default"
+                  >
+                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm ${item.color}`}>
+                      {item.icon}
+                    </div>
+                    <span className="text-lg font-bold text-slate-700">{item.text}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
-          {/* Lado Direito - A Realidade e Conclusão */}
+          {/* Lado Direito - A Dor (A Realidade) */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8 text-slate-600"
+            className="flex flex-col justify-center space-y-12"
           >
-            <div className="space-y-4 text-lg leading-relaxed">
-              <p className="font-bold text-slate-900">Mas talvez hoje a realidade seja outra.</p>
-              <p>Você passa horas criando uma única arte.</p>
-              <p>Salva arquivos em mil pastas diferentes.</p>
-              <p>Compra kits que depois nem lembra onde colocou.</p>
-              <p>Perde tempo procurando algo que deveria estar pronto.</p>
+            <div className="space-y-6">
+              <span className="text-slate-400 font-black text-xs uppercase tracking-[0.3em] flex items-center gap-2">
+                <Minus className="w-4 h-4" /> A Realidade Atual
+              </span>
+              <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed font-medium">
+                Mas hoje, o prazer deu lugar à <span className="text-slate-900 font-bold underline decoration-rose-200 decoration-4">rotina exaustiva</span>.
+              </p>
+              
+              <div className="space-y-4 text-lg text-slate-500">
+                <p className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-300"></span>
+                  Horas criando artes que poderiam estar prontas.
+                </p>
+                <p className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-300"></span>
+                  Caos de arquivos espalhados em mil pastas.
+                </p>
+                <p className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-300"></span>
+                  A sensação constante de estar "apagando incêndio".
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white/50 backdrop-blur-sm p-8 rounded-[2.5rem] border border-white shadow-sm space-y-4">
-              <p className="text-rose-600 font-black uppercase text-xs tracking-widest">E o pior…</p>
-              <p className="text-slate-800 font-bold leading-relaxed italic">
-                “Às vezes vê outras encadernadoras vendendo mais, postando novidades toda semana, crescendo rápido… Enquanto você sente que está sempre correndo atrás.”
-              </p>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-rose-100 to-rose-50 blur-2xl opacity-50 group-hover:opacity-80 transition-opacity rounded-[2.5rem]"></div>
+              <div className="relative bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border border-white shadow-xl">
+                <p className="text-rose-600 font-black uppercase text-[10px] tracking-[0.3em] mb-4">O gatilho da comparação</p>
+                <p className="text-lg sm:text-xl text-slate-800 font-black leading-snug italic">
+                  “Dói ver outras encadernadoras postando novidades toda semana e crescendo rápido, enquanto você sente que está sempre correndo contra o relógio.”
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Manifesto Final - Impacto Centralizado */}
+        {/* Manifesto Final - Impacto Profissional */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-24 pt-24 border-t border-rose-100/50 text-center space-y-10"
+          className="relative rounded-[4rem] bg-slate-900 p-12 sm:p-20 overflow-hidden text-center"
         >
-          <div className="max-w-2xl mx-auto space-y-6">
-            <p className="text-2xl font-bold text-slate-900">E isso não é falta de talento.</p>
-            <p className="text-2xl font-bold text-slate-900">Não é falta de esforço.</p>
-            <div className="relative inline-block">
-              <span className="text-4xl font-black text-rose-600 relative z-10">É falta de estrutura.</span>
-              <div className="absolute bottom-1 left-0 w-full h-4 bg-rose-100 -z-10 rotate-[-1deg]"></div>
-            </div>
-          </div>
+          {/* Efeitos de luz no manifesto */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 blur-[100px] rounded-full"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full"></div>
 
-          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <div className="bg-slate-900 text-white p-6 rounded-3xl shadow-xl">
-              <p className="text-sm font-medium opacity-70 mb-1">Diagnóstico</p>
-              <p className="font-bold text-lg">Nenhum ateliê cresce no improviso.</p>
+          <div className="relative z-10 max-w-3xl mx-auto space-y-12">
+            <div className="space-y-6">
+              <h3 className="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">
+                Isso não é falta de talento ou esforço. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-200">
+                  É falta de estrutura.
+                </span>
+              </h3>
+              <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+                Nenhum ateliê cresce no improviso. O sucesso no artesanato profissional exige processos, não apenas criatividade.
+              </p>
             </div>
-            <div className="bg-rose-500 text-white p-6 rounded-3xl shadow-xl shadow-rose-200">
-              <p className="text-sm font-medium opacity-70 mb-1">A Chave</p>
-              <p className="font-bold text-lg">Você não precisa trabalhar mais.</p>
-            </div>
-          </div>
 
-          <div className="pt-10 space-y-6">
-            <p className="text-2xl font-black text-slate-900 tracking-tight">
-              Você precisa de um <span className="text-rose-600">sistema pronto.</span>
-            </p>
-            <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-sm">
-              E é exatamente isso que o Mundo da Encadernação entrega ↓
-            </p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="bg-white/5 border border-white/10 p-8 rounded-[2.5rem] backdrop-blur-sm group hover:bg-white/10 transition-all">
+                <span className="block text-rose-400 font-black uppercase text-[10px] tracking-widest mb-2">Diagnóstico</span>
+                <p className="text-white font-bold text-xl leading-tight">Você não precisa <br /> trabalhar mais horas.</p>
+              </div>
+              <div className="bg-gradient-to-br from-rose-500 to-rose-600 p-8 rounded-[2.5rem] shadow-2xl shadow-rose-900/20 group hover:scale-[1.02] transition-transform">
+                <span className="block text-white/70 font-black uppercase text-[10px] tracking-widest mb-2">A Chave</span>
+                <p className="text-white font-bold text-xl leading-tight">Você precisa de um <br /> sistema pronto.</p>
+              </div>
+            </div>
+
+            <div className="pt-8 flex flex-col items-center gap-6">
+              <p className="text-slate-400 font-black uppercase tracking-[0.4em] text-xs">
+                A estrutura que você buscava está aqui
+              </p>
+              <div className="animate-bounce w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10">
+                <Minus className="w-6 h-6 text-white rotate-90" />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
