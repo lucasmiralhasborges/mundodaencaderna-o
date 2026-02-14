@@ -137,20 +137,20 @@ const Pricing = () => {
                 </div>
               </div>
 
-              {/* Texto Estratégico Remodelado com Design Profissional */}
+              {/* Texto Estratégico Compacto */}
               {plan.highlight && (
-                <div className="mb-10 p-5 bg-blue-50/40 border border-blue-100/50 rounded-[2rem] text-left flex items-center gap-5 group/highlight transition-colors hover:bg-blue-50/60">
-                  <div className="bg-white rounded-2xl p-3 shadow-sm border border-blue-100 flex-shrink-0 transition-transform group-hover/highlight:scale-110">
-                    <Users className="w-5 h-5 text-blue-600" />
+                <div className="mb-6 p-3 bg-blue-50/60 border border-blue-100/50 rounded-2xl text-left flex items-center gap-3 group/highlight transition-colors">
+                  <div className="bg-white rounded-xl p-2 shadow-sm border border-blue-100 flex-shrink-0">
+                    <Users className="w-4 h-4 text-blue-600" />
                   </div>
-                  <p className="text-slate-600 text-[13px] sm:text-sm font-medium leading-relaxed">
-                    <span className="text-blue-700 font-extrabold">97% das alunas</span> optam pelo Premium pela exclusividade do <span className="text-blue-900 font-black">Acesso Vitalício</span> e <span className="text-blue-900 font-black">Atualizações Semanais</span>.
+                  <p className="text-slate-600 text-[11px] sm:text-xs font-semibold leading-tight">
+                    <span className="text-blue-700 font-extrabold">97% das alunas</span> escolhem o Premium pelo <span className="text-blue-900 font-black">Acesso Vitalício</span> e <span className="text-blue-900 font-black">Atualizações</span>.
                   </p>
                 </div>
               )}
 
               <div className="flex-grow">
-                <ul className="space-y-5 mb-12 text-left border-t border-slate-100 pt-10">
+                <ul className="space-y-4 mb-10 text-left border-t border-slate-100 pt-8">
                   {plan.features.map((feature, i) => {
                     const isMissing = feature.includes("Sem");
                     return (
@@ -166,7 +166,7 @@ const Pricing = () => {
                             <Check className="w-3.5 h-3.5 stroke-[3]" />
                           )}
                         </div>
-                        <span className={`text-sm sm:text-base leading-tight ${
+                        <span className={`text-sm leading-tight ${
                           plan.highlight && (feature.includes("VITALÍCIO") || feature.includes("100.000") || feature.includes("VIP") || feature.includes("ATUALIZAÇÕES"))
                           ? 'font-black text-slate-900' 
                           : isMissing ? 'text-slate-400 line-through opacity-60' : 'font-semibold'
@@ -180,14 +180,14 @@ const Pricing = () => {
               </div>
 
               <div className="mt-auto">
-                <CTAButton className={`w-full !py-6 !text-2xl shadow-2xl ${
+                <CTAButton className={`w-full !py-5 !text-xl shadow-2xl ${
                   !plan.highlight && 'bg-slate-900 hover:bg-slate-800 !from-slate-900 !to-slate-800'
                 }`}>
                   {plan.buttonText}
                 </CTAButton>
               </div>
 
-              <div className="mt-10 grid grid-cols-2 gap-4">
+              <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
                   <ShieldCheck className="w-4 h-4 text-emerald-500" /> Compra Segura
                 </div>
