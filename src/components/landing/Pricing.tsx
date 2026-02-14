@@ -22,7 +22,7 @@ const Pricing = () => {
       ],
       highlight: false,
       buttonText: "QUERO O ESSENCIAL",
-      checkoutUrl: "#" // Link pendente para o essencial
+      checkoutUrl: "https://pay.lowify.com.br/checkout?product_id=t70o0z"
     },
     {
       name: "Plano Premium VIP",
