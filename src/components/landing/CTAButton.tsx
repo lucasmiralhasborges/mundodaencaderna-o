@@ -15,10 +15,19 @@ interface CTAButtonProps {
 const CTAButton = ({ className, children, subtext, variant = 'primary', onClick }: CTAButtonProps) => {
   const isPrimary = variant === 'primary';
 
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    } else {
+      // Comportamento padrão: rolar para a seção de preços
+      document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className={`flex flex-col items-center gap-2.5 ${className}`}>
       <motion.button
-        onClick={onClick}
+        onClick={handleClick}
         whileHover={{ scale: 1.02, translateY: -2 }}
         whileTap={{ scale: 0.98 }}
         className={`
