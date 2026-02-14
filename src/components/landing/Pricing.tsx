@@ -42,7 +42,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-24 px-3 sm:px-6 lg:px-8 bg-white relative overflow-x-hidden">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const Pricing = () => {
           </h2>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto items-stretch">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-12 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <motion.div 
               key={index}
@@ -80,7 +80,7 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative rounded-[2.5rem] sm:rounded-[3rem] p-5 sm:p-10 lg:p-12 flex flex-col transition-all duration-500 ${
+              className={`relative rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-10 lg:p-12 flex flex-col transition-all duration-500 ${
                 plan.highlight 
                 ? 'bg-white shadow-[0_40px_80px_rgba(16,185,129,0.12)] border-[3px] border-emerald-500 z-10' 
                 : 'bg-slate-50 shadow-xl border border-slate-200'
