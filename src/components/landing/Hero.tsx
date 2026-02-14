@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
-import { Sparkles, CheckCircle2, Play, Star, Timer, Flame, Zap } from 'lucide-react';
+import { Sparkles, CheckCircle2, Play, Star, Timer, Zap } from 'lucide-react';
 
 const Hero = () => {
   const currentDate = new Date().toLocaleDateString('pt-BR');
@@ -19,7 +19,6 @@ const Hero = () => {
     <section className="relative pt-20 pb-24 overflow-hidden bg-white">
       {/* Barra de Oferta Ultra Premium (Topo) */}
       <div className="absolute top-0 left-0 w-full bg-[#0F172A] py-3 px-4 z-20 overflow-hidden border-b border-white/5">
-        {/* Efeito de Brilho em Movimento Refinado */}
         <motion.div 
           animate={{ x: ['-150%', '300%'] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -45,7 +44,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Conteúdo Principal Centralizado */}
       <div className="max-w-5xl mx-auto px-4 pt-16 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -56,18 +54,17 @@ const Hero = () => {
           Material 100% Prático e Editável
         </motion.div>
 
-        {/* Título com estilo Premium restaurado */}
+        {/* Nova Headline Atualizada */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] mb-8 tracking-tight max-w-4xl mx-auto"
+          className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] mb-8 tracking-tight max-w-5xl mx-auto"
         >
-          Nunca mais fique sem <br />
-          ideias para suas <br />
+          Pare de perder horas criando do zero e transforme seu ateliê em uma <br className="hidden lg:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-emerald-500">
-            criações e vendas
-          </span>
+            máquina de vendas
+          </span> com mais de 100.000 arquivos prontos e organizados.
         </motion.h1>
 
         <motion.p 
@@ -76,10 +73,9 @@ const Hero = () => {
           transition={{ delay: 0.2 }}
           className="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed font-medium"
         >
-          Tenha acesso imediato a mais de 100.000 arquivos prontos, organizados e fáceis de usar no seu ateliê para encantar seus clientes.
+          Tenha acesso imediato à biblioteca definitiva de arquivos digitais para encadernação e encante seus clientes todos os dias.
         </motion.p>
 
-        {/* Lista de Benefícios (Estilo Capturar.PNG) */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,7 +92,6 @@ const Hero = () => {
           ))}
         </motion.div>
 
-        {/* Mockup Vertical (Estilo Capturar 2.PNG) */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -109,7 +104,6 @@ const Hero = () => {
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
               alt="Preview do Material" 
             />
-            {/* Overlay de Vídeo Placeholder */}
             <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center p-6 text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mb-4 shadow-xl shadow-blue-500/30">
                 <Play className="w-8 h-8 fill-white ml-1" />
@@ -122,7 +116,6 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Botão e Tags de Confiança */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -145,7 +138,6 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Card de Prova Social Final (Estilo Capturar 2.PNG) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -171,7 +163,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Background Decorativo */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none -z-10 opacity-30">
         <div className="absolute top-0 left-[-10%] w-[50%] h-[100%] bg-blue-100/50 blur-[120px] rounded-full"></div>
         <div className="absolute top-20 right-[-10%] w-[40%] h-[80%] bg-emerald-50/50 blur-[120px] rounded-full"></div>
