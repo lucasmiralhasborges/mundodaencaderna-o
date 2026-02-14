@@ -137,7 +137,7 @@ const Hero = () => {
                 {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
               </div>
               <p className="text-slate-600 text-[11px] font-medium text-center">
-                +15.000 alunas com <span className="text-slate-900 font-black">resultados reais</span>.
+                +15.000 alunos com <span className="text-slate-900 font-black">resultados reais</span>.
               </p>
             </motion.div>
           </div>

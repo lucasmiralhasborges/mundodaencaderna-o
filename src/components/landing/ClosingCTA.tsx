@@ -62,7 +62,7 @@ const ClosingCTA = () => {
           viewport={{ once: true }}
           className="text-slate-400 text-lg sm:text-xl mb-12 max-w-2xl mx-auto leading-relaxed font-medium"
         >
-          Não perca mais tempo criando do zero. Junte-se a <span className="text-white font-bold">+15.000 alunas</span> que já profissionalizaram seu ateliê hoje mesmo.
+          Não perca mais tempo criando do zero. Junte-se a <span className="text-white font-bold">+15.000 alunos</span> que já profissionalizaram seu ateliê hoje mesmo.
         </motion.p>
 
         <motion.div

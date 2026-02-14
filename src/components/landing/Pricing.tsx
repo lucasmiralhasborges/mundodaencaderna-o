@@ -33,7 +33,7 @@ const Pricing = () => {
         "ACESSO VITALÍCIO (Pague uma vez)",
         "ATUALIZAÇÕES SEMANAIS (Novidades 2026)",
         "Todos os BÔNUS (Silhouette, Instagram, etc)",
-        "Comunidade VIP de Alunas",
+        "Comunidade VIP de Alunos",
         "Pack de Artes Prontas para Vendas"
       ],
       highlight: true,
@@ -147,7 +147,7 @@ const Pricing = () => {
 
               <CTAButton 
                 variant={plan.highlight ? 'primary' : 'secondary'}
-                subtext={plan.highlight ? "O plano preferido das alunas" : "Acesso imediato"}
+                subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
               >
                 {plan.buttonText}
               </CTAButton>
