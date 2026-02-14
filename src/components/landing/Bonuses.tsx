@@ -91,14 +91,14 @@ const Bonuses = () => {
           ))}
         </div>
 
-        {/* Value Footer Otimizado e Responsivo */}
+        {/* Value Footer Otimizado com Sombra Refinada */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
           className="mt-16 flex justify-center px-4"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-[#0B1222] text-white px-6 py-5 sm:px-10 sm:py-6 rounded-[2rem] shadow-2xl border border-white/5 w-full max-w-2xl sm:w-auto">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-[#0B1222] text-white px-6 py-5 sm:px-10 sm:py-6 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/5 w-full max-w-2xl sm:w-auto relative group">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center border border-emerald-500/20">
                 <Zap className="w-5 h-5 text-emerald-400 fill-emerald-400" />
