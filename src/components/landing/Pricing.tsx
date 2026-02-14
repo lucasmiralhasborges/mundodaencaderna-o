@@ -21,7 +21,8 @@ const Pricing = () => {
         "Sem acesso aos Bônus VIP"
       ],
       highlight: false,
-      buttonText: "QUERO O ESSENCIAL"
+      buttonText: "QUERO O ESSENCIAL",
+      checkoutUrl: "#" // Link pendente para o essencial
     },
     {
       name: "Plano Premium VIP",
@@ -37,7 +38,8 @@ const Pricing = () => {
         "Pack de Artes Prontas para Vendas"
       ],
       highlight: true,
-      buttonText: "QUERO O PREMIUM VIP"
+      buttonText: "QUERO O PREMIUM VIP",
+      checkoutUrl: "https://pay.lowify.com.br/checkout.php?product_id=FiBI79"
     }
   ];
 
@@ -100,7 +102,7 @@ const Pricing = () => {
                 {plan.highlight && (
                   <div className="mb-6 bg-emerald-50/50 border border-emerald-100 p-4 rounded-2xl flex items-start gap-3">
                     <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                      <Users className="w-3 h-3 text-white" />
+                      <Users className="w-3  h-3 text-white" />
                     </div>
                     <p className="text-[11px] font-bold text-emerald-800 leading-tight">
                       97% escolhem o Premium porque é o único com acesso vitalício e atualizações semanais.
@@ -148,6 +150,7 @@ const Pricing = () => {
               <CTAButton 
                 variant={plan.highlight ? 'primary' : 'secondary'}
                 subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
+                onClick={() => plan.checkoutUrl && (window.location.href = plan.checkoutUrl)}
               >
                 {plan.buttonText}
               </CTAButton>
