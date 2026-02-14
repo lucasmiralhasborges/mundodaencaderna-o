@@ -14,66 +14,67 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header Fictício apenas para marca */}
-      <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 py-4 px-6 border-b border-gray-100 flex justify-between items-center">
-        <span className="text-xl font-black text-[#B5838D] tracking-tighter">MUNDO DA ENCADERNAÇÃO</span>
-        <button className="hidden sm:block text-sm font-bold bg-[#B5838D] text-white px-4 py-2 rounded-full">
-          COMPRAR AGORA
+    <div className="min-h-screen bg-[#0B0E14] selection:bg-purple-500 selection:text-white">
+      {/* Header Galáctico */}
+      <header className="fixed top-0 left-0 w-full bg-[#0B0E14]/80 backdrop-blur-xl z-50 py-4 px-6 border-b border-white/5 flex justify-between items-center">
+        <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-yellow-200 tracking-tighter uppercase italic">Mundo da Encadernação</span>
+        <button className="hidden sm:block text-xs font-black bg-white/10 text-white border border-white/20 px-6 py-2 rounded-full hover:bg-white/20 transition-all uppercase tracking-widest">
+          Acessar Agora
         </button>
       </header>
 
       <main>
         <Hero />
         <PainPoints />
-        <Solution />
         
-        {/* Seção de Diferenciais embutida na transição */}
-        <section className="py-16 px-4 bg-[#B5838D] text-white">
-          <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-black mb-2">100k+</div>
-              <div className="text-sm uppercase tracking-widest font-bold opacity-80">Arquivos</div>
+        {/* Barra de Status Estelar */}
+        <section className="py-12 px-4 bg-gradient-to-r from-purple-900 to-blue-900 text-white border-y border-white/10">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-1">
+              <div className="text-4xl font-black">100k+</div>
+              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Arquivos</div>
             </div>
-            <div>
-              <div className="text-3xl font-black mb-2">VITALÍCIO</div>
-              <div className="text-sm uppercase tracking-widest font-bold opacity-80">Acesso</div>
+            <div className="space-y-1">
+              <div className="text-4xl font-black">2025+</div>
+              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Miolos</div>
             </div>
-            <div>
-              <div className="text-3xl font-black mb-2">SEMANAL</div>
-              <div className="text-sm uppercase tracking-widest font-bold opacity-80">Atualizações</div>
+            <div className="space-y-1">
+              <div className="text-4xl font-black">VITALÍCIO</div>
+              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Acesso</div>
             </div>
-            <div>
-              <div className="text-3xl font-black mb-2">100% SEGURO</div>
-              <div className="text-sm uppercase tracking-widest font-bold opacity-80">Checkout</div>
+            <div className="space-y-1">
+              <div className="text-4xl font-black">100%</div>
+              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Digital</div>
             </div>
           </div>
         </section>
 
+        <Solution />
         <Bonuses />
         <Pricing />
         <Guarantee />
         <About />
         <FAQ />
 
-        {/* CTA Final */}
-        <section className="py-20 px-4 text-center bg-white border-t border-gray-100">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#333] mb-8">
-              A VERDADE É SIMPLES: Ou você continua perdendo tempo, ou decide ter lucro agora.
+        {/* CTA de Saída */}
+        <section className="py-32 px-4 text-center bg-[#0B0E14] relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/10"></div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <h2 className="text-4xl sm:text-6xl font-black text-white mb-12 uppercase leading-tight italic">
+              Não deixe sua estrela <br /><span className="text-red-500">apagar</span>.
             </h2>
-            <CTAButton>
-              🔥 CLIQUE AGORA E GARANTA SEU ACESSO IMEDIATO
+            <CTAButton className="scale-110">
+              🔥 DECOLAR MEU NEGÓCIO AGORA
             </CTAButton>
-            <div className="mt-8 space-y-2 font-medium text-gray-500">
-              <p>Comece hoje. Produza mais rápido. Venda mais. Organize seu negócio.</p>
-            </div>
+            <p className="mt-12 text-slate-500 font-bold uppercase tracking-[0.5em] text-xs">
+              Últimas vagas com valor promocional
+            </p>
           </div>
         </section>
       </main>
 
-      <footer className="py-12 px-4 bg-[#FAF9F6] border-t border-gray-100 text-center">
-        <p className="text-gray-400 text-sm mb-4">© 2024 Mundo da Encadernação - Todos os direitos reservados.</p>
+      <footer className="py-16 px-4 bg-black border-t border-white/5 text-center text-slate-500">
+        <p className="mb-6 font-medium">© 2024 Mundo da Encadernação - Transformando Hobby em Império.</p>
         <MadeWithDyad />
       </footer>
     </div>

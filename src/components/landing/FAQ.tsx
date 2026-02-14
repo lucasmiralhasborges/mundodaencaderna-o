@@ -11,38 +11,34 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      q: "Como recebo o acesso?",
-      a: "O acesso é enviado imediatamente para o seu e-mail após a confirmação do pagamento. Pagamentos via PIX ou Cartão são liberados na hora."
+      q: "O acesso é imediato?",
+      a: "Sim! Como um pulo no hiperespaço. Pagou via Pix ou Cartão, o acesso chega no seu e-mail em segundos."
     },
     {
-      q: "O pagamento é mensal?",
-      a: "Não! O pagamento é único. Você paga apenas R$ 19,90 uma vez e tem acesso vitalício à biblioteca e todas as atualizações."
+      q: "É vitalício mesmo?",
+      a: "Sim. Você paga apenas uma vez R$ 19,90 e os arquivos serão seus para sempre, incluindo todas as atualizações futuras."
     },
     {
-      q: "Os arquivos são editáveis?",
-      a: "Sim! A biblioteca inclui arquivos em formatos prontos para imprimir (PDF) e também arquivos editáveis para que você possa colocar a sua marca ou personalizar para o cliente."
+      q: "Funciona para iniciantes?",
+      a: "Com certeza. A biblioteca é organizada para que mesmo quem está começando hoje consiga produzir peças de luxo."
     },
     {
-      q: "Funciona em qualquer impressora?",
-      a: "Sim, os arquivos são otimizados para impressoras jato de tinta ou laser comuns."
-    },
-    {
-      q: "Preciso de programas caros?",
-      a: "A maioria dos arquivos pode ser aberta com programas gratuitos como Adobe Reader ou editores online como Photopea e Canva."
+      q: "Como os arquivos são entregues?",
+      a: "Através de uma plataforma exclusiva de membros, organizada por categorias planetárias para facilitar sua busca."
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-[#FAF9F6]">
+    <section className="py-24 px-4 bg-[#0F172A]">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-[#333] mb-12">Perguntas Frequentes</h2>
+        <h2 className="text-4xl font-black text-center text-white mb-16 uppercase tracking-widest">Base de Conhecimento</h2>
         <Accordion type="single" collapsible className="w-full space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-2xl border border-gray-100 px-6">
-              <AccordionTrigger className="text-left font-bold text-lg text-[#333] hover:no-underline">
+            <AccordionItem key={index} value={`item-${index}`} className="bg-white/5 rounded-2xl border border-white/10 px-8 overflow-hidden transition-all hover:bg-white/[0.07]">
+              <AccordionTrigger className="text-left font-bold text-xl text-white hover:no-underline py-6">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-lg leading-relaxed">
+              <AccordionContent className="text-slate-400 text-lg leading-relaxed pb-6">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
