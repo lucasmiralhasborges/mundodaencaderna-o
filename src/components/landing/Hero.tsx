@@ -148,7 +148,7 @@ const Hero = () => {
             {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
           </div>
           <p className="text-slate-600 text-sm font-medium leading-relaxed">
-            Mais de <span className="text-blue-600 font-black">15.000 empreendedoras</span> já aplicam esse método com <span className="text-slate-900 font-black">resultados reais</span> e comprovados.
+            Mais de <span className="text-blue-600 font-black">15.000 empreendedores</span> já aplicam esse método com <span className="text-slate-900 font-black">resultados reais</span> e comprovados.
           </p>
         </motion.div>
       </div>
