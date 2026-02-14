@@ -3,7 +3,7 @@
 import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Star, Trophy, Users, Rocket } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Star, Trophy, Users, Rocket, TrendingUp } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
@@ -42,113 +42,153 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-slate-50 overflow-hidden">
+    <section className="py-32 px-4 bg-white overflow-hidden relative">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none -z-10">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50/50 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50/50 blur-[120px] rounded-full"></div>
+      </div>
+
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="mb-20"
         >
-          <h2 className="text-sm font-bold text-blue-600 uppercase tracking-[0.3em] mb-4">Investimento com Retorno Imediato</h2>
-          <h3 className="text-3xl sm:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-            Menos de <span className="text-emerald-600">R$ 0,70 por dia</span> <br className="hidden sm:block" />
+          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-6 border border-blue-100">
+            <TrendingUp className="w-4 h-4" />
+            Investimento com Retorno Imediato
+          </div>
+          
+          <h2 className="text-4xl sm:text-6xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
+            Menos de <span className="relative inline-block">
+              <span className="relative z-10 text-emerald-600">R$ 0,70 por dia</span>
+              <svg className="absolute -bottom-2 left-0 w-full h-3 text-emerald-100 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+              </svg>
+            </span> <br />
             para profissionalizar seu negócio.
-          </h3>
-          <p className="text-slate-500 text-lg mb-16 max-w-2xl mx-auto">
-            Escolha o plano que vai levar sua encadernação para o próximo nível. O plano Premium é o favorito de 97% das nossas alunas.
-          </p>
+          </h2>
+          
+          <div className="max-w-2xl mx-auto space-y-4">
+            <p className="text-slate-500 text-lg sm:text-xl font-medium leading-relaxed">
+              Escolha o plano que vai levar sua encadernação para o próximo nível. 
+            </p>
+            <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-2xl font-bold text-sm border border-emerald-100">
+              <Star className="w-4 h-4 fill-emerald-600" />
+              O plano Premium é o favorito de 97% das nossas alunas
+            </div>
+          </div>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative rounded-[2.5rem] p-8 sm:p-12 transition-all ${
+              className={`relative rounded-[3rem] p-8 sm:p-14 flex flex-col transition-all duration-500 ${
                 plan.highlight 
-                ? 'bg-white shadow-[0_20px_50px_rgba(16,185,129,0.15)] border-4 border-emerald-500 z-10 scale-105' 
-                : 'bg-white/50 shadow-xl border border-slate-200 opacity-80'
+                ? 'bg-white shadow-[0_40px_80px_rgba(16,185,129,0.12)] border-[3px] border-emerald-500 z-10' 
+                : 'bg-slate-50 shadow-xl border border-slate-200'
               }`}
             >
               {plan.highlight && (
-                <>
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-8 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap">
-                    <Trophy className="w-4 h-4 fill-white" /> MELHOR CUSTO-BENEFÍCIO (VAGAS LIMITADAS)
-                  </div>
-                  <div className="absolute top-10 right-10 text-emerald-100 opacity-20">
-                    <Rocket className="w-32 h-32" />
-                  </div>
-                </>
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-8 py-3 rounded-full text-xs font-black flex items-center gap-2 shadow-xl whitespace-nowrap uppercase tracking-widest">
+                  <Trophy className="w-4 h-4 fill-white" /> Recomendado por Especialistas
+                </div>
               )}
 
-              <div className="mb-8 text-left relative z-10">
-                <h4 className={`text-xl font-bold mb-2 ${plan.highlight ? 'text-emerald-700' : 'text-slate-500'}`}>
+              <div className="mb-10 text-left">
+                <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-blue-900' : 'text-slate-500'}`}>
                   {plan.name}
                 </h4>
                 
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-slate-400 line-through text-lg">R$ {plan.originalPrice}</span>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-slate-400 line-through text-xl font-medium">R$ {plan.originalPrice}</span>
                   {plan.highlight && (
-                    <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded">ECONOMIZE R$ 177,10</span>
+                    <span className="bg-emerald-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-tighter">
+                      ECONOMIZE R$ 177,10
+                    </span>
                   )}
                 </div>
 
                 <div className="flex items-baseline gap-1">
-                  <span className="text-slate-400 text-2xl font-medium">R$</span>
-                  <span className={`text-6xl sm:text-7xl font-bold ${plan.highlight ? 'text-slate-900' : 'text-slate-700'}`}>
+                  <span className="text-slate-400 text-2xl font-bold">R$</span>
+                  <span className={`text-7xl sm:text-8xl font-black tracking-tighter ${plan.highlight ? 'text-slate-900' : 'text-slate-700'}`}>
                     {plan.price.split(',')[0]}
-                    <span className="text-3xl">,{plan.price.split(',')[1]}</span>
+                    <span className="text-4xl">,{plan.price.split(',')[1]}</span>
                   </span>
-                  <span className="text-slate-400 font-medium">/único</span>
+                  <span className="text-slate-400 font-bold ml-2">/único</span>
                 </div>
-                <p className="text-emerald-600 font-bold mt-2 italic text-lg">{plan.installments}</p>
+                
+                <div className="mt-4 flex items-center gap-2 text-emerald-600 font-black italic text-xl">
+                  <div className="w-8 h-px bg-emerald-200" />
+                  {plan.installments}
+                </div>
               </div>
 
-              <ul className="space-y-4 mb-10 text-left border-t border-slate-100 pt-8 relative z-10">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-600">
-                    {plan.highlight ? (
-                      <Check className="w-5 h-5 flex-shrink-0 text-emerald-500 mt-1" />
-                    ) : (
-                      <Check className="w-5 h-5 flex-shrink-0 text-slate-400 mt-1" />
-                    )}
-                    <span className={`text-sm sm:text-base ${
-                      plan.highlight && (feature.includes("VITALÍCIO") || feature.includes("100.000") || feature.includes("VIP"))
-                      ? 'font-bold text-slate-900' 
-                      : feature.includes("Sem") || feature.includes("NÃO") ? 'text-slate-400 line-through' : 'font-medium'
-                    }`}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex-grow">
+                <ul className="space-y-5 mb-12 text-left border-t border-slate-100 pt-10">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-4 text-slate-600">
+                      <div className={`mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
+                        plan.highlight ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-200 text-slate-400'
+                      }`}>
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      </div>
+                      <span className={`text-sm sm:text-base leading-tight ${
+                        plan.highlight && (feature.includes("VITALÍCIO") || feature.includes("100.000") || feature.includes("VIP") || feature.includes("ATUALIZAÇÕES"))
+                        ? 'font-black text-slate-900' 
+                        : feature.includes("Sem") ? 'text-slate-400 line-through' : 'font-semibold'
+                      }`}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <div className="relative z-10">
-                <CTAButton className={`w-full !py-5 !text-xl shadow-2xl ${!plan.highlight && 'bg-none bg-slate-200 !text-slate-600 shadow-none hover:bg-slate-300'}`}>
+              <div className="mt-auto">
+                <CTAButton className={`w-full !py-6 !text-2xl shadow-2xl ${
+                  !plan.highlight && 'bg-slate-900 hover:bg-slate-800 !from-slate-900 !to-slate-800'
+                }`}>
                   {plan.buttonText}
                 </CTAButton>
               </div>
 
-              <div className="mt-8 flex justify-center items-center gap-6 text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
-                <div className="flex items-center gap-1"><ShieldCheck className="w-4 h-4" /> 100% Seguro</div>
-                <div className="flex items-center gap-1"><Zap className="w-4 h-4" /> Acesso Imediato</div>
-                {plan.highlight && <div className="flex items-center gap-1 text-emerald-600"><Users className="w-4 h-4" /> 15k+ Alunas</div>}
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                  <ShieldCheck className="w-4 h-4 text-emerald-500" /> Compra Segura
+                </div>
+                <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                  <Zap className="w-4 h-4 text-blue-500" /> Acesso na Hora
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-16 max-w-2xl mx-auto">
-          <p className="text-slate-400 text-sm italic mb-4">
-            * O valor de R$ 19,90 é garantido apenas para o lote atual. Na próxima virada de mês, o valor retornará para R$ 197,00.
-          </p>
-          <div className="flex justify-center gap-2">
-            {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-emerald-500 text-emerald-500" />)}
-            <span className="text-xs font-bold text-slate-600 ml-2">NOTA 4.9/5 POR MAIS DE 15.000 CLIENTES</span>
-          </div>
+        <div className="mt-20 max-w-3xl mx-auto p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100">
+           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex -space-x-3">
+                {[1,2,3,4].map(i => (
+                  <img key={i} src={`https://i.pravatar.cc/100?img=${i+20}`} className="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="User" />
+                ))}
+                <div className="w-12 h-12 rounded-full border-4 border-white bg-blue-600 flex items-center justify-center text-white text-[10px] font-bold">+15k</div>
+              </div>
+              <div className="text-left">
+                <div className="flex gap-1 mb-1">
+                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                </div>
+                <p className="text-slate-600 text-sm font-bold">
+                  "O melhor investimento que fiz para o meu ateliê em 2024"
+                </p>
+              </div>
+           </div>
         </div>
       </div>
     </section>
