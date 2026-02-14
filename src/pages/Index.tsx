@@ -10,7 +10,7 @@ import Pricing from '@/components/landing/Pricing';
 import Guarantee from '@/components/landing/Guarantee';
 import About from '@/components/landing/About';
 import FAQ from '@/components/landing/FAQ';
-import CTAButton from '@/components/landing/CTAButton';
+import ClosingCTA from '@/components/landing/ClosingCTA';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -67,25 +67,7 @@ const Index = () => {
         <FAQ />
 
         {/* Closing CTA */}
-        <section className="py-32 px-4 text-center bg-slate-900 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto relative z-10"
-          >
-            <h2 className="text-4xl sm:text-6xl font-extrabold text-white mb-8 leading-tight">
-              A decisão que vai mudar <br />seu faturamento.
-            </h2>
-            <p className="text-blue-100/60 text-xl mb-12 max-w-2xl mx-auto">
-              Junte-se a mais de 15.000 empreendedores que já profissionalizaram seu negócio.
-            </p>
-            <CTAButton className="!py-6 !px-12 !text-2xl">
-              SIM! QUERO MEU ACESSO AGORA
-            </CTAButton>
-          </motion.div>
-        </section>
+        <ClosingCTA />
       </main>
 
       <footer className="py-20 px-4 bg-white border-t border-slate-100 text-center">
