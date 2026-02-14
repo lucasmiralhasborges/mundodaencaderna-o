@@ -14,12 +14,12 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#0B0E14] selection:bg-purple-500 selection:text-white">
-      {/* Header Galáctico */}
-      <header className="fixed top-0 left-0 w-full bg-[#0B0E14]/80 backdrop-blur-xl z-50 py-4 px-6 border-b border-white/5 flex justify-between items-center">
-        <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-yellow-200 tracking-tighter uppercase italic">Mundo da Encadernação</span>
-        <button className="hidden sm:block text-xs font-black bg-white/10 text-white border border-white/20 px-6 py-2 rounded-full hover:bg-white/20 transition-all uppercase tracking-widest">
-          Acessar Agora
+    <div className="min-h-screen bg-white">
+      {/* Header Clean */}
+      <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 py-4 px-6 border-b border-slate-100 flex justify-between items-center">
+        <span className="text-lg font-bold text-blue-900 tracking-tight">Mundo da Encadernação</span>
+        <button className="hidden sm:block text-sm font-bold bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+          Começar Agora
         </button>
       </header>
 
@@ -27,24 +27,24 @@ const Index = () => {
         <Hero />
         <PainPoints />
         
-        {/* Barra de Status Estelar */}
-        <section className="py-12 px-4 bg-gradient-to-r from-purple-900 to-blue-900 text-white border-y border-white/10">
+        {/* Barra de Prova Social/Status */}
+        <section className="py-12 px-4 bg-blue-900 text-white">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-1">
-              <div className="text-4xl font-black">100k+</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Arquivos</div>
+            <div>
+              <div className="text-3xl font-bold mb-1">100.000+</div>
+              <div className="text-xs uppercase tracking-widest text-blue-200">Arquivos</div>
             </div>
-            <div className="space-y-1">
-              <div className="text-4xl font-black">2025+</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Miolos</div>
+            <div>
+              <div className="text-3xl font-bold mb-1">2025/26</div>
+              <div className="text-xs uppercase tracking-widest text-blue-200">Atualizados</div>
             </div>
-            <div className="space-y-1">
-              <div className="text-4xl font-black">VITALÍCIO</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Acesso</div>
+            <div>
+              <div className="text-3xl font-bold mb-1">VITALÍCIO</div>
+              <div className="text-xs uppercase tracking-widest text-blue-200">Acesso</div>
             </div>
-            <div className="space-y-1">
-              <div className="text-4xl font-black">100%</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-300">Digital</div>
+            <div>
+              <div className="text-3xl font-bold mb-1">100%</div>
+              <div className="text-xs uppercase tracking-widest text-blue-200">Digital</div>
             </div>
           </div>
         </section>
@@ -57,24 +57,23 @@ const Index = () => {
         <FAQ />
 
         {/* CTA de Saída */}
-        <section className="py-32 px-4 text-center bg-[#0B0E14] relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/10"></div>
-          <div className="max-w-4xl mx-auto relative z-10">
-            <h2 className="text-4xl sm:text-6xl font-black text-white mb-12 uppercase leading-tight italic">
-              Não deixe sua estrela <br /><span className="text-red-500">apagar</span>.
+        <section className="py-24 px-4 text-center bg-white border-t border-slate-100">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-8 leading-tight">
+              Pronta para decolar <br />seu negócio?
             </h2>
-            <CTAButton className="scale-110">
-              🔥 DECOLAR MEU NEGÓCIO AGORA
+            <CTAButton>
+              🔥 GARANTIR MEU ACESSO IMEDIATO
             </CTAButton>
-            <p className="mt-12 text-slate-500 font-bold uppercase tracking-[0.5em] text-xs">
-              Últimas vagas com valor promocional
+            <p className="mt-8 text-slate-400 font-bold uppercase tracking-widest text-xs">
+              Valor promocional por tempo limitado
             </p>
           </div>
         </section>
       </main>
 
-      <footer className="py-16 px-4 bg-black border-t border-white/5 text-center text-slate-500">
-        <p className="mb-6 font-medium">© 2024 Mundo da Encadernação - Transformando Hobby em Império.</p>
+      <footer className="py-12 px-4 bg-slate-50 border-t border-slate-100 text-center text-slate-400">
+        <p className="text-sm">© 2024 Mundo da Encadernação. Todos os direitos reservados.</p>
         <MadeWithDyad />
       </footer>
     </div>

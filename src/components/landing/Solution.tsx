@@ -1,78 +1,65 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle2, Library, Rocket, Shield } from 'lucide-react';
+import { CheckCircle2, Layout, Zap, Target } from 'lucide-react';
 
 const Solution = () => {
   const items = [
     "Miolos atualizados 2025/2026",
     "Capas prontas e editáveis",
-    "Planners de Alta Performance",
-    "Agendas Profissionais",
+    "Planners e Agendas 2025",
     "Cadernetas da Saúde",
-    "Mockups Galácticos",
+    "Mockups Profissionais",
     "Calendários e Blocos",
-    "Temas Infantis e Corporativos"
+    "Temas Infantis e Corporativos",
+    "Arquivos Escolares Completos"
   ];
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-[#0F172A] to-[#0B0E14] text-white">
+    <section className="py-24 px-4 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <div className="inline-block p-4 rounded-3xl bg-white/5 border border-white/10 mb-6">
-            <Library className="w-12 h-12 text-[#F59E0B]" />
-          </div>
-          <h2 className="text-4xl sm:text-6xl font-black mb-4 uppercase tracking-tighter leading-none">
-            🌍 O Mundo da <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Encadernação</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-6">
+            🌍 MUNDO DA ENCADERNAÇÃO
           </h2>
-          <p className="text-xl text-slate-400 font-medium">
-            A maior biblioteca organizada do Brasil, agora em uma nova órbita.
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            A maior biblioteca organizada do Brasil. Não é só um kit, é o seu novo sistema de trabalho.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold">Arquivos prontos para decolar seu negócio:</h3>
+            <h3 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+              <Layout className="text-emerald-500" /> O que você recebe:
+            </h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {items.map((item, index) => (
-                <div key={index} className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-all">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                  <span className="text-md text-slate-200">{item}</span>
+                <div key={index} className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                  <span className="text-slate-700 font-medium">{item}</span>
                 </div>
               ))}
             </div>
             
-            <div className="bg-[#F59E0B]/10 border border-[#F59E0B]/30 p-8 rounded-3xl">
+            <div className="bg-emerald-600 text-white p-8 rounded-3xl shadow-xl">
               <div className="flex items-center gap-3 mb-4">
-                <Rocket className="w-6 h-6 text-[#F59E0B]" />
-                <p className="text-[#F59E0B] font-black text-2xl uppercase italic">Fluxo Estelar</p>
+                <Zap className="w-6 h-6" />
+                <p className="font-bold text-xl">FLUXO DE TRABALHO</p>
               </div>
-              <div className="flex flex-wrap gap-4 font-bold text-slate-400">
-                <span className="text-white">Baixe</span>
-                <span>•</span>
-                <span className="text-white">Personalize</span>
-                <span>•</span>
-                <span className="text-white">Imprima</span>
-                <span>•</span>
-                <span className="text-white">Lucre</span>
-              </div>
+              <p className="text-emerald-50 font-medium">Baixe • Personalize • Imprime • Vende</p>
             </div>
           </div>
           
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div className="bg-[#1E293B] rounded-3xl p-10 relative z-10 border border-white/10">
-              <h4 className="text-3xl font-bold mb-6 text-white flex items-center gap-3">
-                <Shield className="text-blue-400" /> Imagine isso...
-              </h4>
-              <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                Uma cliente pede uma agenda infantil. Enquanto outras encadernadoras estão perdidas criando... você já está com o projeto pronto em minutos.
-              </p>
-              <div className="space-y-4 pt-8 border-t border-white/10">
-                <p className="text-2xl font-black text-emerald-400">Velocidade é PODER.</p>
-                <p className="text-2xl font-black text-blue-400">Organização é LUCRO.</p>
-              </div>
+          <div className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100">
+            <h4 className="text-2xl font-bold mb-6 text-blue-900 flex items-center gap-2">
+              <Target className="text-emerald-500" /> Imagine isso...
+            </h4>
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              Uma cliente pede uma agenda infantil. Enquanto outras encadernadoras estão perdidas criando... você já está com o projeto pronto em minutos.
+            </p>
+            <div className="space-y-4 pt-8 border-t border-slate-100">
+              <p className="text-xl font-bold text-emerald-600">Velocidade vende.</p>
+              <p className="text-xl font-bold text-blue-900">Organização gera lucro.</p>
             </div>
           </div>
         </div>
