@@ -3,14 +3,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
-import { Sparkles, CheckCircle2, Play, Star, Zap, Info } from 'lucide-react';
+import { Sparkles, CheckCircle2, Play, Star, Zap } from 'lucide-react';
 
 const Hero = () => {
   const benefits = [
     "Ideal para ateliês, iniciantes e profissionais",
     "Aplicação simples e imediata",
-    "Material fácil de usar",
-    "Acesso vitalício"
+    "Acesso vitalício",
+    "Sem pastas confusas",
+    "Sem arquivos duplicados",
+    "Sem material ultrapassado"
   ];
 
   return (
@@ -70,11 +72,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="max-w-md mx-auto space-y-3 mb-16 text-left"
+          className="max-w-2xl mx-auto grid sm:grid-cols-2 gap-3 mb-16 text-left"
         >
           {benefits.map((benefit, i) => (
             <div key={i} className="flex items-center gap-4 bg-slate-50 border border-slate-100 p-4 rounded-2xl hover:border-emerald-200 transition-colors group">
-              <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm shadow-emerald-200">
                 <CheckCircle2 className="w-4 h-4 text-white" />
               </div>
               <span className="font-bold text-slate-700 text-sm sm:text-base">{benefit}</span>
