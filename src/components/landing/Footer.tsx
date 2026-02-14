@@ -11,8 +11,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand & Mission */}
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">M</div>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/hero-headline-image.png" 
+                alt="Logo Mundo da Encadernação" 
+                className="w-10 h-auto object-contain"
+              />
               <span className="text-xl font-black text-slate-900 tracking-tight">Mundo da Encadernação</span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">
