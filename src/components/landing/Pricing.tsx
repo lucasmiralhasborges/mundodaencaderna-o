@@ -3,7 +3,7 @@
 import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Star, Trophy, TrendingUp, X } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Star, Trophy, TrendingUp, X, Users } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
@@ -84,17 +84,6 @@ const Pricing = () => {
             <p className="text-slate-500 text-lg sm:text-xl font-medium leading-relaxed">
               Escolha o plano que vai levar sua <span className="text-slate-900 font-bold">encadernação para o próximo nível.</span>
             </p>
-            
-            {/* Bottom Badge - Social Proof Highlighter */}
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 px-6 py-3 rounded-2xl font-extrabold text-sm border border-emerald-100 shadow-sm"
-            >
-              <div className="bg-emerald-500 rounded-full p-1">
-                <Star className="w-3 h-3 fill-white text-white" />
-              </div>
-              O plano Premium é o favorito de 97% das nossas alunas
-            </motion.div>
           </div>
         </motion.div>
         
@@ -107,10 +96,10 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative rounded-[3rem] p-8 sm:p-14 flex flex-col transition-all duration-500 ${
+              className={`relative rounded-[3rem] p-8 sm:p-12 flex flex-col transition-all duration-500 ${
                 plan.highlight 
                 ? 'bg-white shadow-[0_40px_80px_rgba(16,185,129,0.12)] border-[3px] border-emerald-500 z-10' 
-                : 'bg-slate-50 shadow-xl border border-slate-200'
+                : 'bg-slate-50 shadow-xl border border-slate-200 opacity-90'
               }`}
             >
               {plan.highlight && (
@@ -119,7 +108,7 @@ const Pricing = () => {
                 </div>
               )}
 
-              <div className="mb-10 text-left">
+              <div className="mb-8 text-left">
                 <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-blue-900' : 'text-slate-500'}`}>
                   {plan.name}
                 </h4>
@@ -147,6 +136,18 @@ const Pricing = () => {
                   {plan.installments}
                 </div>
               </div>
+
+              {/* Texto Estratégico Adicionado no Plano Premium */}
+              {plan.highlight && (
+                <div className="mb-10 p-5 bg-blue-50/50 border border-blue-100 rounded-2xl text-left flex items-start gap-4">
+                  <div className="bg-blue-600 rounded-full p-2 mt-1 flex-shrink-0">
+                    <Users className="w-4 h-4 text-white" />
+                  </div>
+                  <p className="text-blue-900 text-sm font-bold leading-tight">
+                    97% escolhem o Premium porque é o único com <span className="text-blue-700 underline decoration-blue-300">acesso vitalício</span> e <span className="text-blue-700 underline decoration-blue-300">atualizações semanais</span>.
+                  </p>
+                </div>
+              )}
 
               <div className="flex-grow">
                 <ul className="space-y-5 mb-12 text-left border-t border-slate-100 pt-10">
