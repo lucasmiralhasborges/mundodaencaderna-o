@@ -47,7 +47,7 @@ const Hero = () => {
                 Material 100% Prático e Editável
               </motion.div>
 
-              {/* Imagem acima da headline */}
+              {/* Imagem acima da headline - Aumentada de h-16/h-24 para h-20/h-32 */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -57,7 +57,7 @@ const Hero = () => {
                 <img 
                   src="/hero-headline-image.png" 
                   alt="Mundo da Encadernação" 
-                  className="h-16 sm:h-24 w-auto object-contain"
+                  className="h-20 sm:h-32 w-auto object-contain"
                 />
               </motion.div>
             </div>
