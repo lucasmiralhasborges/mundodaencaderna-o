@@ -144,7 +144,7 @@ const Pricing = () => {
                     <Users className="w-4 h-4 text-blue-600" />
                   </div>
                   <p className="text-slate-600 text-[11px] sm:text-xs font-semibold leading-tight">
-                    <span className="text-blue-700 font-extrabold">97% das alunas</span> escolhem o Premium pelo <span className="text-blue-900 font-black">Acesso Vitalício</span> e <span className="text-blue-900 font-black">Atualizações</span>.
+                    <span className="text-blue-700 font-extrabold">97% dos alunos</span> escolhem o Premium pelo <span className="text-blue-900 font-black">Acesso Vitalício</span> e <span className="text-blue-900 font-black">Atualizações</span>.
                   </p>
                 </div>
               )}
