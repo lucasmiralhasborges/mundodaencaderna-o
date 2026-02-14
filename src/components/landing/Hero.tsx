@@ -3,143 +3,156 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
-import { Sparkles, CheckCircle2, BookOpen, Layers, Star } from 'lucide-react';
+import { Sparkles, CheckCircle2, Play, Star } from 'lucide-react';
 
 const Hero = () => {
+  const currentDate = new Date().toLocaleDateString('pt-BR');
+
+  const benefits = [
+    "Ideal para ateliês, iniciantes e profissionais",
+    "Aplicação simples e imediata",
+    "Material fácil de usar",
+    "Acesso vitalício"
+  ];
+
   return (
-    <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-white">
-      {/* Background Decorativo Superior (Mesh Gradient) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none -z-10 opacity-40">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[60%] bg-blue-100/50 blur-[120px] rounded-full"></div>
-        <div className="absolute top-0 right-[-5%] w-[40%] h-[50%] bg-emerald-50/60 blur-[120px] rounded-full"></div>
+    <section className="relative pt-20 pb-24 overflow-hidden bg-white">
+      {/* Barra de Oferta (Topo) */}
+      <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 py-3 px-4 z-20">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
+          <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest">Desconto Somente Hoje!</span>
+          <div className="bg-black/20 px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold">
+            {currentDate}
+          </div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      {/* Conteúdo Principal Centralizado */}
+      <div className="max-w-4xl mx-auto px-4 pt-16 text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-left"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-[10px] font-bold mb-10 uppercase tracking-widest"
         >
-          {/* Badge Superior Refinada */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-600 px-4 py-1.5 rounded-full text-[10px] font-bold mb-8 uppercase tracking-[0.2em]"
-          >
-            <Sparkles className="w-3 h-3 text-blue-600" />
-            Lançamento Coleção 2025/2026
-          </motion.div>
+          <Sparkles className="w-3 h-3" />
+          Material 100% Prático e Editável
+        </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8 tracking-tight">
-            Seu Ateliê em <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-emerald-500">
-              Outro Nível.
-            </span>
-          </h1>
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] mb-8 tracking-tight"
+        >
+          Nunca mais fique sem <br />
+          ideias para suas <span className="text-blue-600">criações e vendas</span>
+        </motion.h1>
 
-          <p className="text-lg sm:text-xl text-slate-500 max-w-xl mb-10 leading-relaxed font-medium">
-            Pare de perder horas criando arquivos do zero. Tenha acesso à <span className="text-slate-900 font-bold">maior biblioteca de encadernação</span> do Brasil e foque no que importa: <span className="text-emerald-600 font-bold">vender.</span>
-          </p>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-lg text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed"
+        >
+          Tenha acesso imediato a mais de 100.000 arquivos prontos, organizados e fáceis de usar no seu ateliê para encantar seus clientes.
+        </motion.p>
 
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col sm:flex-row items-center gap-5">
-              <CTAButton className="w-full sm:w-auto !py-5 !px-12 shadow-[0_20px_40px_rgba(30,58,138,0.15)]">
-                ACESSAR ACERVO AGORA
-              </CTAButton>
-              
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <img 
-                      key={i} 
-                      src={`https://i.pravatar.cc/100?img=${i+15}`} 
-                      className="w-9 h-9 rounded-full border-2 border-white shadow-sm"
-                      alt="Aluna"
-                    />
-                  ))}
-                </div>
-                <div className="text-xs font-bold text-slate-400">
-                  Junte-se a +15k alunas
-                </div>
+        {/* Lista de Benefícios (Estilo Capturar.PNG) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="max-w-md mx-auto space-y-3 mb-16 text-left"
+        >
+          {benefits.map((benefit, i) => (
+            <div key={i} className="flex items-center gap-4 bg-slate-50 border border-slate-100 p-4 rounded-2xl hover:border-emerald-200 transition-colors group">
+              <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <CheckCircle2 className="w-4 h-4 text-white" />
               </div>
+              <span className="font-bold text-slate-700 text-sm sm:text-base">{benefit}</span>
             </div>
+          ))}
+        </motion.div>
 
-            {/* Micro-benefícios de confiança */}
-            <div className="flex flex-wrap gap-6 border-t border-slate-100 pt-8">
-              <div className="flex items-center gap-2 text-slate-500 text-xs font-bold">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                ACESSO IMEDIATO
+        {/* Mockup Vertical (Estilo Capturar 2.PNG) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4 }}
+          className="relative max-w-[320px] mx-auto mb-12"
+        >
+          <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] border-[8px] border-white aspect-[9/16] bg-slate-100 group">
+            <img 
+              src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              alt="Preview do Material" 
+            />
+            {/* Overlay de Vídeo Placeholder */}
+            <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center p-6 text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mb-4 shadow-xl shadow-blue-500/30">
+                <Play className="w-8 h-8 fill-white ml-1" />
               </div>
-              <div className="flex items-center gap-2 text-slate-500 text-xs font-bold">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                VITALÍCIO
-              </div>
-              <div className="flex items-center gap-2 text-slate-500 text-xs font-bold">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                +100 MIL ARQUIVOS
-              </div>
+              <p className="text-white font-black text-xl leading-tight drop-shadow-lg uppercase tracking-tighter">
+                BIBLIOTECA COM <br />
+                <span className="text-blue-400">MILHARES DE ARQUIVOS</span>
+              </p>
             </div>
           </div>
         </motion.div>
 
+        {/* Botão e Tags de Confiança */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, rotate: 2 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="space-y-6"
         >
-          {/* Elementos Flutuantes (Cards de Suporte) */}
-          <motion.div 
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-6 -left-6 bg-white p-4 rounded-2xl shadow-2xl border border-slate-100 z-20 hidden sm:flex items-center gap-3"
-          >
-            <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
-              <BookOpen className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Miolos 2025</p>
-              <p className="text-sm font-bold text-slate-900">100% Editáveis</p>
-            </div>
-          </motion.div>
+          <CTAButton className="w-full max-w-sm mx-auto !py-6 !text-xl shadow-[0_20px_40px_rgba(37,99,235,0.2)]">
+            QUERO MEU ACESSO AGORA
+          </CTAButton>
 
-          <motion.div 
-            animate={{ y: [0, 15, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-10 -right-6 bg-white p-4 rounded-2xl shadow-2xl border border-slate-100 z-20 hidden sm:flex items-center gap-3"
-          >
-            <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
-              <Layers className="w-5 h-5" />
+          <div className="flex justify-center gap-3">
+            <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-emerald-100">
+              <CheckCircle2 className="w-3 h-3" />
+              Acesso Imediato
             </div>
-            <div>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Atualizações</p>
-              <p className="text-sm font-bold text-slate-900">Novidades Toda Semana</p>
+            <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-emerald-100">
+              <CheckCircle2 className="w-3 h-3" />
+              Material Digital
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
-          {/* Container Principal da Imagem */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-blue-600/5 blur-3xl rounded-[3rem] -z-10 group-hover:bg-blue-600/10 transition-colors"></div>
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(15,23,42,0.15)] border-[8px] border-white bg-slate-100">
+        {/* Card de Prova Social Final (Estilo Capturar 2.PNG) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mt-16 bg-white border border-slate-100 rounded-[2.5rem] p-8 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] max-w-sm mx-auto"
+        >
+          <div className="flex -space-x-3 justify-center mb-4">
+            {[1, 2, 3, 4, 5].map((i) => (
               <img 
-                src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200&auto=format&fit=crop" 
-                alt="Mundo da Encadernação"
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                key={i} 
+                src={`https://i.pravatar.cc/100?img=${i+10}`} 
+                className="w-10 h-10 rounded-full border-4 border-white shadow-sm" 
+                alt="Usuário" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
-            </div>
-            
-            {/* Tag de Avaliação */}
-            <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
-              </div>
-              <span className="text-xs font-black text-slate-900">4.9/5</span>
-            </div>
+            ))}
           </div>
+          <div className="flex justify-center gap-1 mb-4">
+            {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+          </div>
+          <p className="text-slate-600 text-sm font-medium leading-relaxed">
+            Mais de <span className="text-blue-600 font-black">15.000 empreendedoras</span> já aplicam esse método com <span className="text-slate-900 font-black">resultados reais</span> e comprovados.
+          </p>
         </motion.div>
+      </div>
+
+      {/* Background Decorativo */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] pointer-events-none -z-10 opacity-20">
+        <div className="absolute top-0 left-1/4 w-[50%] h-[100%] bg-blue-100 blur-[120px] rounded-full"></div>
+        <div className="absolute top-20 right-1/4 w-[40%] h-[80%] bg-emerald-50 blur-[120px] rounded-full"></div>
       </div>
     </section>
   );
