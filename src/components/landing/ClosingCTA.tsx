@@ -11,7 +11,7 @@ const ClosingCTA = () => {
       {/* Background Effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/20 blur-[150px] rounded-full"></div>
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-emerald-500/10 blur-[100px] rounded-full"></div>
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-emerald-50/10 blur-[100px] rounded-full"></div>
       </div>
 
       {/* Floating Elements */}
@@ -68,7 +68,8 @@ const ClosingCTA = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-8"
         >
-          <CTAButton className="!py-7 !px-16 !text-2xl shadow-[0_20px_50px_rgba(16,185,129,0.3)] hover:shadow-[0_25px_60px_rgba(16,185,129,0.4)]">
+          {/* Botão Otimizado: Removidos paddings e font-size exagerados que causavam quebra de linha */}
+          <CTAButton className="w-full max-w-md shadow-[0_20px_50px_rgba(16,185,129,0.3)] hover:shadow-[0_25px_60px_rgba(16,185,129,0.4)]">
             SIM! QUERO MEU ACESSO AGORA
           </CTAButton>
 
