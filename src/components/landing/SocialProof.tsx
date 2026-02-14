@@ -119,7 +119,7 @@ const SocialProof = () => {
 
         <div className="mt-20 text-center">
           <div className="inline-block bg-emerald-50 text-emerald-700 px-6 py-3 rounded-2xl font-bold text-sm">
-            🔥 +15.000 empreendedoras já deram esse passo. E você?
+            🔥 +15.000 empreendedores já deram esse passo. E você?
           </div>
         </div>
       </div>

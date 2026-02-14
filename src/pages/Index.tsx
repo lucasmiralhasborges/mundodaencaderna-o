@@ -79,7 +79,7 @@ const Index = () => {
               A decisão que vai mudar <br />seu faturamento.
             </h2>
             <p className="text-blue-100/60 text-xl mb-12 max-w-2xl mx-auto">
-              Junte-se a mais de 15.000 empreendedoras que já profissionalizaram seu negócio.
+              Junte-se a mais de 15.000 empreendedores que já profissionalizaram seu negócio.
             </p>
             <CTAButton className="!py-6 !px-12 !text-2xl">
               SIM! QUERO MEU ACESSO AGORA
