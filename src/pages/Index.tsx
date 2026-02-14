@@ -3,6 +3,7 @@
 import React from 'react';
 import Hero from '@/components/landing/Hero';
 import PainPoints from '@/components/landing/PainPoints';
+import EmotionalBlock from '@/components/landing/EmotionalBlock';
 import Solution from '@/components/landing/Solution';
 import SocialProof from '@/components/landing/SocialProof';
 import Bonuses from '@/components/landing/Bonuses';
@@ -31,6 +32,10 @@ const Index = () => {
         <Hero />
         
         <PainPoints />
+
+        {/* New Strategic Emotional Block */}
+        <EmotionalBlock />
+
         <Solution />
         <Bonuses />
         
