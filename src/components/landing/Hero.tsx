@@ -3,12 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 const Hero = () => {
   return (
     <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-      {/* Background Shapes */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200/30 blur-[120px] rounded-full -z-10 animate-pulse"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-100/40 blur-[120px] rounded-full -z-10"></div>
 
