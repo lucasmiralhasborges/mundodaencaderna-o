@@ -3,7 +3,7 @@
 import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Star, Trophy, TrendingUp } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Star, Trophy, TrendingUp, X } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
@@ -150,22 +150,31 @@ const Pricing = () => {
 
               <div className="flex-grow">
                 <ul className="space-y-5 mb-12 text-left border-t border-slate-100 pt-10">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-4 text-slate-600">
-                      <div className={`mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
-                        plan.highlight ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-200 text-slate-400'
-                      }`}>
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      </div>
-                      <span className={`text-sm sm:text-base leading-tight ${
-                        plan.highlight && (feature.includes("VITALÍCIO") || feature.includes("100.000") || feature.includes("VIP") || feature.includes("ATUALIZAÇÕES"))
-                        ? 'font-black text-slate-900' 
-                        : feature.includes("Sem") ? 'text-slate-400 line-through' : 'font-semibold'
-                      }`}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
+                  {plan.features.map((feature, i) => {
+                    const isMissing = feature.includes("Sem");
+                    return (
+                      <li key={i} className="flex items-start gap-4 text-slate-600">
+                        <div className={`mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
+                          isMissing 
+                          ? 'bg-slate-200 text-slate-400' 
+                          : plan.highlight ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-200 text-slate-400'
+                        }`}>
+                          {isMissing ? (
+                            <X className="w-3 h-3 stroke-[3]" />
+                          ) : (
+                            <Check className="w-3.5 h-3.5 stroke-[3]" />
+                          )}
+                        </div>
+                        <span className={`text-sm sm:text-base leading-tight ${
+                          plan.highlight && (feature.includes("VITALÍCIO") || feature.includes("100.000") || feature.includes("VIP") || feature.includes("ATUALIZAÇÕES"))
+                          ? 'font-black text-slate-900' 
+                          : isMissing ? 'text-slate-400 line-through opacity-60' : 'font-semibold'
+                        }`}>
+                          {feature}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
 
