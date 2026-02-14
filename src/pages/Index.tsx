@@ -30,16 +30,6 @@ const Index = () => {
       <main className="overflow-x-hidden">
         <Hero />
         
-        {/* Trust Bar */}
-        <div className="py-12 bg-white border-y border-slate-100">
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all">
-            <div className="flex items-center gap-2 font-black text-xl italic text-slate-400">STRIPE SECURE</div>
-            <div className="flex items-center gap-2 font-black text-xl italic text-slate-400">HOTMART PARTNER</div>
-            <div className="flex items-center gap-2 font-black text-xl italic text-slate-400">VISA/MASTER</div>
-            <div className="flex items-center gap-2 font-black text-xl italic text-slate-400">PIX IMEDIATO</div>
-          </div>
-        </div>
-
         <PainPoints />
         <Solution />
         <Bonuses />
