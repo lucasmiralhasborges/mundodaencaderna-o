@@ -91,19 +91,28 @@ const Bonuses = () => {
           ))}
         </div>
 
-        {/* Value Footer */}
+        {/* Value Footer Otimizado e Responsivo */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 text-center"
+          className="mt-16 flex justify-center px-4"
         >
-          <div className="inline-flex items-center gap-3 bg-[#0B1222] text-white px-8 py-4 rounded-2xl shadow-xl">
-            <Zap className="w-5 h-5 text-emerald-400 fill-emerald-400" />
-            <p className="font-bold text-sm sm:text-base">
-              Total em Bônus: <span className="text-emerald-400 line-through mr-2">R$ 248,00</span>
-              <span className="text-white">LEVANDO TUDO POR R$ 0,00</span>
-            </p>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-[#0B1222] text-white px-6 py-5 sm:px-10 sm:py-6 rounded-[2rem] shadow-2xl border border-white/5 w-full max-w-2xl sm:w-auto">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center border border-emerald-500/20">
+                <Zap className="w-5 h-5 text-emerald-400 fill-emerald-400" />
+              </div>
+              <span className="font-bold text-slate-300 text-sm sm:text-base uppercase tracking-wider">Total em Bônus:</span>
+            </div>
+            
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="text-slate-500 line-through font-bold text-sm sm:text-base">R$ 248,00</span>
+              <div className="h-4 w-px bg-white/10 hidden sm:block"></div>
+              <span className="text-emerald-400 font-black text-sm sm:text-base uppercase tracking-tighter bg-emerald-400/10 px-3 py-1 rounded-lg border border-emerald-400/20">
+                LEVANDO TUDO POR R$ 0,00
+              </span>
+            </div>
           </div>
         </motion.div>
       </div>
