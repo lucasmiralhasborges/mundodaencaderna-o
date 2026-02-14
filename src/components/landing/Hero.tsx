@@ -28,31 +28,35 @@ const Hero = () => {
       </div>
 
       {/* Conteúdo Principal Centralizado */}
-      <div className="max-w-4xl mx-auto px-4 pt-16 text-center relative z-10">
+      <div className="max-w-5xl mx-auto px-4 pt-16 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-[10px] font-bold mb-10 uppercase tracking-widest"
+          className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-600 px-4 py-1.5 rounded-full text-[10px] font-bold mb-10 uppercase tracking-[0.2em]"
         >
-          <Sparkles className="w-3 h-3" />
+          <Sparkles className="w-3 h-3 text-blue-600" />
           Material 100% Prático e Editável
         </motion.div>
 
+        {/* Título com estilo Premium restaurado */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] mb-8 tracking-tight"
+          className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] mb-8 tracking-tight max-w-4xl mx-auto"
         >
           Nunca mais fique sem <br />
-          ideias para suas <span className="text-blue-600">criações e vendas</span>
+          ideias para suas <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-emerald-500">
+            criações e vendas
+          </span>
         </motion.h1>
 
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-lg text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed font-medium"
         >
           Tenha acesso imediato a mais de 100.000 arquivos prontos, organizados e fáceis de usar no seu ateliê para encantar seus clientes.
         </motion.p>
@@ -107,7 +111,7 @@ const Hero = () => {
           transition={{ delay: 0.5 }}
           className="space-y-6"
         >
-          <CTAButton className="w-full max-w-sm mx-auto !py-6 !text-xl shadow-[0_20px_40px_rgba(37,99,235,0.2)]">
+          <CTAButton className="w-full max-w-sm mx-auto !py-6 !text-xl shadow-[0_20px_40px_rgba(30,58,138,0.15)]">
             QUERO MEU ACESSO AGORA
           </CTAButton>
 
@@ -150,9 +154,9 @@ const Hero = () => {
       </div>
 
       {/* Background Decorativo */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] pointer-events-none -z-10 opacity-20">
-        <div className="absolute top-0 left-1/4 w-[50%] h-[100%] bg-blue-100 blur-[120px] rounded-full"></div>
-        <div className="absolute top-20 right-1/4 w-[40%] h-[80%] bg-emerald-50 blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none -z-10 opacity-30">
+        <div className="absolute top-0 left-[-10%] w-[50%] h-[100%] bg-blue-100/50 blur-[120px] rounded-full"></div>
+        <div className="absolute top-20 right-[-10%] w-[40%] h-[80%] bg-emerald-50/50 blur-[120px] rounded-full"></div>
       </div>
     </section>
   );
