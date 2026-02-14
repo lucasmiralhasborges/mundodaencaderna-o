@@ -6,7 +6,7 @@ import { XCircle, AlertCircle } from 'lucide-react';
 
 const PainPoints = () => {
   const pains = [
-    "Presa em criações manuais lentas e cansativas",
+    "Preso em criações manuais lentas e cansativas",
     "Perdendo clientes por falta de novidades",
     "Insegurança na hora de precificar seus produtos",
     "Bagunça total de arquivos no computador",
