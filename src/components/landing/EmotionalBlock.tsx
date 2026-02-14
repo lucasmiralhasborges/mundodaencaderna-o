@@ -102,14 +102,25 @@ const EmotionalBlock = () => {
               </div>
             </div>
 
-            <div className="pt-10 sm:pt-16">
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="inline-flex flex-col sm:flex-row items-center gap-3 bg-white/5 px-6 py-4 sm:px-8 sm:py-5 rounded-2xl border border-white/10 text-rose-300 font-bold text-sm sm:text-base transition-all"
+            {/* BOTÃO OTIMIZADO (CONFORME IMAGEM) */}
+            <div className="pt-12 sm:pt-20">
+              <motion.button 
+                whileHover={{ scale: 1.03, y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group relative w-full max-w-md mx-auto p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md transition-all flex flex-col items-center gap-6 hover:bg-white/10 hover:border-rose-500/30"
               >
-                <span>E é exatamente isso que o Mundo da Encadernação entrega.</span>
-                <ArrowRight className="w-5 h-5 animate-pulse" />
-              </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
+                
+                <p className="text-rose-300 font-black text-lg sm:text-xl leading-snug tracking-tight text-center relative z-10">
+                  E é exatamente isso que o <br />
+                  <span className="text-white">Mundo da Encadernação</span> entrega.
+                </p>
+                
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/10 group-hover:bg-rose-500 group-hover:border-rose-500 transition-all relative z-10 shadow-lg group-hover:shadow-rose-500/40">
+                  <ArrowRight className="w-6 h-6 text-rose-300 group-hover:text-white transition-transform group-hover:translate-x-1" />
+                </div>
+              </motion.button>
             </div>
           </div>
         </motion.div>
