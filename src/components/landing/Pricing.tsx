@@ -96,6 +96,17 @@ const Pricing = () => {
                 <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-blue-900' : 'text-slate-500'}`}>
                   {plan.name}
                 </h4>
+
+                {plan.highlight && (
+                  <div className="mb-6 bg-emerald-50/50 border border-emerald-100 p-4 rounded-2xl flex items-start gap-3">
+                    <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                      <Users className="w-3 h-3 text-white" />
+                    </div>
+                    <p className="text-[11px] font-bold text-emerald-800 leading-tight">
+                      97% escolhem o Premium porque é o único com acesso vitalício e atualizações semanais.
+                    </p>
+                  </div>
+                )}
                 
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-slate-400 line-through text-xl font-medium">R$ {plan.originalPrice}</span>
