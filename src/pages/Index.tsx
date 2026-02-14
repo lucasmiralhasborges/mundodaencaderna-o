@@ -11,7 +11,7 @@ import Guarantee from '@/components/landing/Guarantee';
 import About from '@/components/landing/About';
 import FAQ from '@/components/landing/FAQ';
 import ClosingCTA from '@/components/landing/ClosingCTA';
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import Footer from '@/components/landing/Footer';
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const Index = () => {
@@ -70,20 +70,7 @@ const Index = () => {
         <ClosingCTA />
       </main>
 
-      <footer className="py-20 px-4 bg-white border-t border-slate-100 text-center">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10 opacity-50">
-            <span className="text-2xl font-black text-slate-900">Mundo da Encadernação</span>
-          </div>
-          <div className="flex justify-center gap-8 mb-10 text-slate-500 text-sm font-semibold">
-            <a href="#" className="hover:text-blue-600">Termos de Uso</a>
-            <a href="#" className="hover:text-blue-600">Privacidade</a>
-            <a href="#" className="hover:text-blue-600">Suporte</a>
-          </div>
-          <p className="text-slate-400 text-sm">© 2024 Mundo da Encadernação. Todos os direitos reservados.</p>
-          <MadeWithDyad />
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
