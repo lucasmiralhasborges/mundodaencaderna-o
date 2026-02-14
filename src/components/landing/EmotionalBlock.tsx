@@ -7,12 +7,12 @@ import { Heart, Sparkles, Clock, TrendingUp, Quote, ArrowRight, Target } from 'l
 const EmotionalBlock = () => {
   return (
     <section className="py-24 sm:py-40 px-4 bg-white relative overflow-hidden">
-      {/* Background Sophistication */}
+      {/* Elementos de fundo sutis para profundidade */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto">
-        {/* Authority Header */}
+        {/* Header de Autoridade */}
         <div className="flex flex-col items-center text-center mb-24 sm:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
