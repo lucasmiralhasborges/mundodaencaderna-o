@@ -6,8 +6,12 @@ import CTAButton from './CTAButton';
 import { ShieldCheck, Zap, Star, Rocket } from 'lucide-react';
 
 const ClosingCTA = () => {
+  const scrollToPricing = () => {
+    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="py-32 px-4 text-center bg-[#0B1222] relative overflow-hidden">
+    <section className="py-24 sm:py-32 px-4 text-center bg-[#0B1222] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/20 blur-[150px] rounded-full"></div>
@@ -35,7 +39,7 @@ const ClosingCTA = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-10"
+          className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-10"
         >
           <Zap className="w-4 h-4 fill-emerald-400" />
           Acesso Vitalício Liberado
@@ -45,7 +49,7 @@ const ClosingCTA = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tight"
+          className="text-4xl sm:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tight"
         >
           A decisão que vai mudar <br />
           seu <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">faturamento</span>.
@@ -56,7 +60,7 @@ const ClosingCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-slate-400 text-lg sm:text-xl mb-14 max-w-2xl mx-auto leading-relaxed font-medium"
+          className="text-slate-400 text-lg sm:text-xl mb-12 max-w-2xl mx-auto leading-relaxed font-medium"
         >
           Não perca mais tempo criando do zero. Junte-se a <span className="text-white font-bold">+15.000 alunas</span> que já profissionalizaram seu ateliê hoje mesmo.
         </motion.p>
@@ -68,9 +72,14 @@ const ClosingCTA = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-8"
         >
-          <CTAButton className="!py-7 !px-16 !text-2xl shadow-[0_20px_50px_rgba(16,185,129,0.3)] hover:shadow-[0_25px_60px_rgba(16,185,129,0.4)]">
-            SIM! QUERO MEU ACESSO AGORA
-          </CTAButton>
+          <div className="w-full max-w-md">
+            <CTAButton 
+              onClick={scrollToPricing}
+              subtext="Garantia de satisfação de 15 dias"
+            >
+              QUERO MEU ACESSO AGORA
+            </CTAButton>
+          </div>
 
           <div className="flex flex-wrap justify-center gap-8 opacity-60">
             <div className="flex items-center gap-2 text-white/70 text-sm font-bold">
