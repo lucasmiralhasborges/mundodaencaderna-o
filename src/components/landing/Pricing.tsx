@@ -153,10 +153,19 @@ const Pricing = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  if (typeof window !== 'undefined' && (window as any).fbq) {
-                    (window as any).fbq('track', 'InitiateCheckout');
+
+                  const win = window as any;
+                  if (!win.__checkoutFired) {
+                    win.__checkoutFired = true;
+
+                    if (win.fbq) {
+                      win.fbq('track', 'InitiateCheckout');
+                    }
+
+                    setTimeout(() => {
+                      window.location.href = plan.checkoutUrl;
+                    }, 150);
                   }
-                  window.location.href = plan.checkoutUrl;
                 }}
               >
                 {plan.buttonText}
