@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
-import { Sparkles, CheckCircle2, Play, Star, Zap } from 'lucide-react';
+import { Sparkles, CheckCircle2, Star, Zap } from 'lucide-react';
 
 const Hero = () => {
   const benefits = [
@@ -47,7 +47,6 @@ const Hero = () => {
                 Material 100% Prático e Editável
               </motion.div>
 
-              {/* Imagem acima da headline - Aumentada de h-16/h-24 para h-20/h-32 */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -114,46 +113,23 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="relative space-y-8">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
-              className="relative max-w-[280px] sm:max-w-[320px] mx-auto"
-            >
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border-[6px] border-white aspect-[9/16] bg-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600" 
-                  className="w-full h-full object-cover" 
-                  alt="Preview" 
-                />
-                <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center p-6 text-center backdrop-blur-[2px]">
-                  <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white mb-4 shadow-lg">
-                    <Play className="w-7 h-7 fill-white ml-1" />
-                  </div>
-                  <p className="text-white font-black text-lg uppercase tracking-tight">
-                    BIBLIOTECA <br /> <span className="text-blue-400">COMPLETA</span>
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
+          <div className="relative flex items-center justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="bg-white/80 backdrop-blur-md border border-slate-100 rounded-3xl p-5 shadow-lg max-w-sm mx-auto"
+              className="bg-white/80 backdrop-blur-md border border-slate-100 rounded-[2.5rem] p-8 sm:p-10 shadow-xl max-w-sm mx-auto"
             >
-              <div className="flex -space-x-2 justify-center mb-3">
+              <div className="flex -space-x-2 justify-center mb-6">
                 {[1, 2, 3, 4].map((i) => (
-                  <img key={i} src={`https://i.pravatar.cc/100?img=${i+10}`} className="w-8 h-8 rounded-full border-2 border-white shadow-sm" alt="User" />
+                  <img key={i} src={`https://i.pravatar.cc/100?img=${i+10}`} className="w-10 h-10 rounded-full border-2 border-white shadow-sm" alt="User" />
                 ))}
               </div>
-              <div className="flex justify-center gap-0.5 mb-2">
-                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+              <div className="flex justify-center gap-0.5 mb-4">
+                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
               </div>
-              <p className="text-slate-600 text-[11px] font-medium text-center">
-                +15.000 alunos com <span className="text-slate-900 font-black">resultados reais</span>.
+              <p className="text-slate-600 text-sm font-medium text-center leading-relaxed">
+                Junte-se a <span className="text-slate-900 font-black">+15.000 alunos</span> que transformaram seus ateliês com resultados reais.
               </p>
             </motion.div>
           </div>
