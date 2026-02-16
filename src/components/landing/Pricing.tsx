@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback } from 'react';
+import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
 import { Check, ShieldCheck, Zap, Trophy, TrendingUp, X, Users, Star } from 'lucide-react';
@@ -42,16 +42,6 @@ const Pricing = () => {
       checkoutUrl: "https://pay.lowify.com.br/checkout.php?product_id=FiBI79"
     }
   ];
-
-  const handleCheckout = useCallback((url: string) => {
-    // Verificar se o Pixel está carregado e disparar apenas uma vez
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'InitiateCheckout');
-    }
-    
-    // Redirecionamento imediato após o comando de rastreio
-    window.location.assign(url);
-  }, []);
 
   return (
     <section className="py-32 px-4 bg-white overflow-hidden relative">
@@ -160,7 +150,14 @@ const Pricing = () => {
               <CTAButton 
                 variant={plan.highlight ? 'primary' : 'secondary'}
                 subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
-                onClick={() => plan.checkoutUrl && handleCheckout(plan.checkoutUrl)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  if (typeof window !== 'undefined' && (window as any).fbq) {
+                    (window as any).fbq('track', 'InitiateCheckout');
+                  }
+                  window.location.href = plan.checkoutUrl;
+                }}
               >
                 {plan.buttonText}
               </CTAButton>

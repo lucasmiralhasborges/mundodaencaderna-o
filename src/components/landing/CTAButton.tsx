@@ -9,15 +9,15 @@ interface CTAButtonProps {
   children: React.ReactNode;
   subtext?: string;
   variant?: 'primary' | 'secondary';
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
 const CTAButton = ({ className, children, subtext, variant = 'primary', onClick }: CTAButtonProps) => {
   const isPrimary = variant === 'primary';
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
-      onClick();
+      onClick(e);
     } else {
       // Comportamento padrão: rolar para a seção de preços
       document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
