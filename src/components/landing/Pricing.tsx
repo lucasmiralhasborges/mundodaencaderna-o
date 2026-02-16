@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
 import { Check, ShieldCheck, Zap, Trophy, TrendingUp, X, Users, Star } from 'lucide-react';
@@ -43,15 +43,15 @@ const Pricing = () => {
     }
   ];
 
-  const handleCheckout = (url: string) => {
-    // Disparar o evento do Meta Pixel antes do redirecionamento
+  const handleCheckout = useCallback((url: string) => {
+    // Verificar se o Pixel está carregado e disparar apenas uma vez
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'InitiateCheckout');
     }
     
-    // Redirecionar para o checkout
-    window.location.href = url;
-  };
+    // Redirecionamento imediato após o comando de rastreio
+    window.location.assign(url);
+  }, []);
 
   return (
     <section className="py-32 px-4 bg-white overflow-hidden relative">
