@@ -151,9 +151,6 @@ const Pricing = () => {
                 href={plan.checkoutUrl}
                 variant={plan.highlight ? 'primary' : 'secondary'}
                 subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
-                onClick={() => {
-                  window.fbq && window.fbq('track', 'InitiateCheckout');
-                }}
               >
                 {plan.buttonText}
               </CTAButton>
