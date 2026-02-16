@@ -43,6 +43,16 @@ const Pricing = () => {
     }
   ];
 
+  const handleCheckout = (url: string) => {
+    // Disparar o evento do Meta Pixel antes do redirecionamento
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
+    
+    // Redirecionar para o checkout
+    window.location.href = url;
+  };
+
   return (
     <section className="py-32 px-4 bg-white overflow-hidden relative">
       <div className="max-w-6xl mx-auto text-center">
@@ -150,7 +160,7 @@ const Pricing = () => {
               <CTAButton 
                 variant={plan.highlight ? 'primary' : 'secondary'}
                 subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
-                onClick={() => plan.checkoutUrl && (window.location.href = plan.checkoutUrl)}
+                onClick={() => plan.checkoutUrl && handleCheckout(plan.checkoutUrl)}
               >
                 {plan.buttonText}
               </CTAButton>
