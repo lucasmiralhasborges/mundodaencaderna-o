@@ -10,34 +10,39 @@ interface CTAButtonProps {
   subtext?: string;
   variant?: 'primary' | 'secondary';
   onClick?: (e: React.MouseEvent) => void;
+  href?: string;
 }
 
-const CTAButton = ({ className, children, subtext, variant = 'primary', onClick }: CTAButtonProps) => {
+const CTAButton = ({ className, children, subtext, variant = 'primary', onClick, href }: CTAButtonProps) => {
   const isPrimary = variant === 'primary';
 
   const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
       onClick(e);
-    } else {
-      // Comportamento padrão: rolar para a seção de preços
+    } else if (!href) {
       document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const Component = href ? motion.a : motion.button;
+  const componentProps = href 
+    ? { href, target: "_blank", rel: "noopener noreferrer" } 
+    : {};
+
   return (
     <div className={`flex flex-col items-center gap-2.5 ${className}`}>
-      <motion.button
+      <Component
+        {...componentProps}
         onClick={handleClick}
         whileHover={{ scale: 1.02, translateY: -2 }}
         whileTap={{ scale: 0.98 }}
         className={`
-          relative overflow-hidden group w-full py-4 px-6 rounded-xl font-extrabold text-base sm:text-lg uppercase tracking-wider transition-all shadow-xl flex flex-col items-center justify-center
+          relative overflow-hidden group w-full py-4 px-6 rounded-xl font-extrabold text-base sm:text-lg uppercase tracking-wider transition-all shadow-xl flex flex-col items-center justify-center cursor-pointer
           ${isPrimary 
             ? 'bg-gradient-to-r from-emerald-600 to-teal-500 text-white shadow-emerald-500/20' 
             : 'bg-white text-slate-900 border-2 border-slate-100 shadow-slate-200/50'}
         `}
       >
-        {/* Efeito de Brilho (Shine) */}
         <motion.div
           initial={{ x: '-100%' }}
           animate={{ x: '200%' }}
@@ -50,7 +55,7 @@ const CTAButton = ({ className, children, subtext, variant = 'primary', onClick 
           {children}
           <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </div>
-      </motion.button>
+      </Component>
       
       {subtext && (
         <div className="flex items-center gap-2 text-[9px] font-black text-slate-400 uppercase tracking-widest opacity-80">

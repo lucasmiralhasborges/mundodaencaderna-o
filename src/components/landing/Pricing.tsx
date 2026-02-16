@@ -148,24 +148,11 @@ const Pricing = () => {
               </div>
 
               <CTAButton 
+                href={plan.checkoutUrl}
                 variant={plan.highlight ? 'primary' : 'secondary'}
                 subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-
-                  const win = window as any;
-                  if (!win.__checkoutFired) {
-                    win.__checkoutFired = true;
-
-                    if (win.fbq) {
-                      win.fbq('track', 'InitiateCheckout');
-                    }
-
-                    setTimeout(() => {
-                      window.location.href = plan.checkoutUrl;
-                    }, 150);
-                  }
+                onClick={() => {
+                  window.fbq && window.fbq('track', 'InitiateCheckout');
                 }}
               >
                 {plan.buttonText}
