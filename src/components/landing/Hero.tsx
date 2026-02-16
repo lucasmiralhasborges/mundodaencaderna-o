@@ -98,6 +98,20 @@ const Hero = () => {
               ))}
             </motion.div>
 
+            {/* Imagem Promocional Adicionada Aqui */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="relative max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-50"
+            >
+              <img 
+                src="/hero-promo.png" 
+                alt="Biblioteca Mundo da Encadernação" 
+                className="w-full h-auto"
+              />
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
