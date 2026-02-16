@@ -13,49 +13,65 @@ interface CTAButtonProps {
   href?: string;
 }
 
-const CTAButton = ({ className, children, subtext, variant = 'primary', onClick, href }: CTAButtonProps) => {
+const CTAButton = ({ className = "", children, subtext, variant = 'primary', onClick, href }: CTAButtonProps) => {
   const isPrimary = variant === 'primary';
 
   const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
       onClick(e);
     } else if (!href) {
-      document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+      const element = document.getElementById('pricing');
+      element?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const Component = href ? motion.a : motion.button;
-  const componentProps = href 
-    ? { href, target: "_blank", rel: "noopener noreferrer" } 
-    : {};
+  const baseClasses = `
+    relative overflow-hidden group w-full py-4 px-6 rounded-xl font-extrabold text-base sm:text-lg uppercase tracking-wider transition-all shadow-xl flex flex-col items-center justify-center cursor-pointer
+    ${isPrimary 
+      ? 'bg-gradient-to-r from-emerald-600 to-teal-500 text-white shadow-emerald-500/20' 
+      : 'bg-white text-slate-900 border-2 border-slate-100 shadow-slate-200/50'}
+  `;
+
+  const content = (
+    <>
+      <motion.div
+        initial={{ x: '-100%' }}
+        animate={{ x: '200%' }}
+        transition={{ repeat: Infinity, duration: 3, ease: "linear", repeatDelay: 1 }}
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-1/2 -skew-x-12 pointer-events-none"
+      />
+      <div className="flex items-center gap-2.5 relative z-10">
+        {isPrimary && <Zap className="w-4 h-4 fill-white" />}
+        {children}
+        <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </>
+  );
 
   return (
-    <div className={`flex flex-col items-center gap-2.5 ${className}`}>
-      <Component
-        {...componentProps}
-        onClick={handleClick}
-        whileHover={{ scale: 1.02, translateY: -2 }}
-        whileTap={{ scale: 0.98 }}
-        className={`
-          relative overflow-hidden group w-full py-4 px-6 rounded-xl font-extrabold text-base sm:text-lg uppercase tracking-wider transition-all shadow-xl flex flex-col items-center justify-center cursor-pointer
-          ${isPrimary 
-            ? 'bg-gradient-to-r from-emerald-600 to-teal-500 text-white shadow-emerald-500/20' 
-            : 'bg-white text-slate-900 border-2 border-slate-100 shadow-slate-200/50'}
-        `}
-      >
-        <motion.div
-          initial={{ x: '-100%' }}
-          animate={{ x: '200%' }}
-          transition={{ repeat: Infinity, duration: 3, ease: "linear", repeatDelay: 1 }}
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-1/2 -skew-x-12 pointer-events-none"
-        />
-
-        <div className="flex items-center gap-2.5 relative z-10">
-          {isPrimary && <Zap className="w-4 h-4 fill-white" />}
-          {children}
-          <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </div>
-      </Component>
+    <div className={`flex flex-col items-center gap-2.5 w-full ${className}`}>
+      {href ? (
+        <motion.a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={onClick}
+          whileHover={{ scale: 1.02, translateY: -2 }}
+          whileTap={{ scale: 0.98 }}
+          className={baseClasses}
+        >
+          {content}
+        </motion.a>
+      ) : (
+        <motion.button
+          onClick={handleClick}
+          whileHover={{ scale: 1.02, translateY: -2 }}
+          whileTap={{ scale: 0.98 }}
+          className={baseClasses}
+        >
+          {content}
+        </motion.button>
+      )}
       
       {subtext && (
         <div className="flex items-center gap-2 text-[9px] font-black text-slate-400 uppercase tracking-widest opacity-80">
