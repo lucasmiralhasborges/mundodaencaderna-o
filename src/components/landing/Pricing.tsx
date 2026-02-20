@@ -26,9 +26,9 @@ const Pricing = () => {
     },
     {
       name: "Plano Premium VIP",
-      price: "19,90",
+      price: "27,90",
       originalPrice: "197,00",
-      installments: "4x de R$ 5,35",
+      installments: "4x de R$ 7,50",
       features: [
         "100.000+ Arquivos (Biblioteca Total)",
         "ACESSO VITALÍCIO (Pague uma vez)",
@@ -61,7 +61,7 @@ const Pricing = () => {
             Menos de <br className="sm:hidden" />
             <span className="relative inline-block px-2">
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">
-                R$ 0,70 por dia
+                R$ 0,93 por dia
               </span>
               <motion.span 
                 initial={{ width: 0 }}
