@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Box, Layers, Zap, Star, Layout, ShieldCheck } from 'lucide-react';
+import AutoCarousel from './AutoCarousel';
 
 const Solution = () => {
   const categories = [
@@ -53,9 +54,12 @@ const Solution = () => {
             O que você vai encontrar <br className="hidden sm:block" />
             dentro do <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">nosso mundo</span>
           </h2>
-          <p className="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
+          <p className="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto font-medium mb-12">
             Tudo o que você precisa para profissionalizar seu ateliê e triplicar suas vendas, organizado por categorias.
           </p>
+          
+          {/* Adicionando o Carrossel aqui */}
+          <AutoCarousel />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
