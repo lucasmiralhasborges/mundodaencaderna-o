@@ -15,7 +15,6 @@ const Pricing = () => {
       name: "Plano Essencial",
       price: "9,90",
       originalPrice: "47,00",
-      installments: "2x de R$ 5,15",
       features: [
         "50.000 Arquivos Selecionados",
         "Miolos Padrão 2025",
@@ -33,7 +32,6 @@ const Pricing = () => {
       name: "Plano Premium VIP",
       price: "27,90",
       originalPrice: "197,00",
-      installments: "4x de R$ 7,50",
       features: [
         "100.000+ Arquivos (Biblioteca Total)",
         "ACESSO VITALÍCIO (Pague uma vez)",
@@ -152,10 +150,6 @@ const Pricing = () => {
                     {plan.price.split(',')[0]}
                     <span className="text-4xl">,{plan.price.split(',')[1]}</span>
                   </span>
-                </div>
-                
-                <div className="mt-4 text-emerald-600 font-black italic text-xl">
-                  {plan.installments}
                 </div>
               </div>
 
