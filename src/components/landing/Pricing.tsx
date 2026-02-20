@@ -1,13 +1,17 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
 import { Check, ShieldCheck, Zap, Trophy, TrendingUp, X, Users, Star } from 'lucide-react';
+import UpsellModal from './UpsellModal';
 
 const Pricing = () => {
+  const [isUpsellOpen, setIsUpsellOpen] = useState(false);
+
   const plans = [
     {
+      id: "essencial",
       name: "Plano Essencial",
       price: "9,90",
       originalPrice: "47,00",
@@ -25,6 +29,7 @@ const Pricing = () => {
       checkoutUrl: "https://pay.lowify.com.br/checkout?product_id=t70o0z"
     },
     {
+      id: "premium",
       name: "Plano Premium VIP",
       price: "27,90",
       originalPrice: "197,00",
@@ -43,8 +48,36 @@ const Pricing = () => {
     }
   ];
 
+  const handlePlanClick = (planId: string, checkoutUrl: string) => {
+    if (planId === 'essencial') {
+      setIsUpsellOpen(true);
+    } else {
+      window.open(checkoutUrl, '_blank');
+    }
+  };
+
+  const handleUpsellConfirm = () => {
+    // Redireciona para o checkout do Premium com desconto ou plano normal
+    // Usando o link do premium fornecido pelo usuário
+    window.open("https://pay.lowify.com.br/checkout.php?product_id=FiBI79", '_blank');
+    setIsUpsellOpen(false);
+  };
+
+  const handleUpsellDecline = () => {
+    // Redireciona para o checkout do básico
+    window.open("https://pay.lowify.com.br/checkout?product_id=t70o0z", '_blank');
+    setIsUpsellOpen(false);
+  };
+
   return (
     <section className="py-32 px-4 bg-white overflow-hidden relative">
+      <UpsellModal 
+        isOpen={isUpsellOpen} 
+        onClose={() => setIsUpsellOpen(false)}
+        onConfirm={handleUpsellConfirm}
+        onDecline={handleUpsellDecline}
+      />
+
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,7 +181,7 @@ const Pricing = () => {
               </div>
 
               <CTAButton 
-                href={plan.checkoutUrl}
+                onClick={() => handlePlanClick(plan.id, plan.checkoutUrl)}
                 variant={plan.highlight ? 'primary' : 'secondary'}
                 subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
               >
