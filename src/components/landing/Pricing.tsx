@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Trophy, TrendingUp, X, Users, Star } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Trophy, TrendingUp, X, Users, Star, DollarSign } from 'lucide-react';
 import UpsellModal from './UpsellModal';
 
 const Pricing = () => {
@@ -15,6 +15,7 @@ const Pricing = () => {
       name: "Plano Essencial",
       price: "9,90",
       originalPrice: "47,00",
+      savings: "37,10",
       features: [
         "50.000 Arquivos Selecionados",
         "Miolos Padrão 2025",
@@ -32,6 +33,7 @@ const Pricing = () => {
       name: "Plano Premium VIP",
       price: "27,90",
       originalPrice: "197,00",
+      savings: "169,10",
       features: [
         "100.000+ Arquivos (Biblioteca Total)",
         "ACESSO VITALÍCIO (Pague uma vez)",
@@ -144,12 +146,18 @@ const Pricing = () => {
                   <span className="text-slate-400 line-through text-xl font-medium">R$ {plan.originalPrice}</span>
                 </div>
 
-                <div className="flex items-baseline gap-1">
+                <div className="flex items-baseline gap-1 mb-6">
                   <span className="text-slate-400 text-2xl font-bold">R$</span>
                   <span className={`text-7xl sm:text-8xl font-black tracking-tighter ${plan.highlight ? 'text-slate-900' : 'text-slate-700'}`}>
                     {plan.price.split(',')[0]}
                     <span className="text-4xl">,{plan.price.split(',')[1]}</span>
                   </span>
+                </div>
+
+                {/* Savings Badge based on the image provided */}
+                <div className="inline-flex items-center gap-2.5 bg-[#1a2e2a] border border-emerald-500/50 px-5 py-2.5 rounded-full text-emerald-400 font-black text-sm uppercase tracking-wider shadow-lg">
+                  <DollarSign className="w-4 h-4" />
+                  Economize R$ {plan.savings}
                 </div>
               </div>
 
