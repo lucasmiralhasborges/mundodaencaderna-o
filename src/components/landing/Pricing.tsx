@@ -154,9 +154,9 @@ const Pricing = () => {
                   </span>
                 </div>
 
-                {/* Savings Badge based on the image provided */}
-                <div className="inline-flex items-center gap-2.5 bg-[#1a2e2a] border border-emerald-500/50 px-5 py-2.5 rounded-full text-emerald-400 font-black text-sm uppercase tracking-wider shadow-lg">
-                  <DollarSign className="w-4 h-4" />
+                {/* Savings Badge - Updated Style */}
+                <div className="inline-flex items-center gap-2.5 bg-emerald-50 border border-emerald-100 px-5 py-2.5 rounded-full text-emerald-700 font-black text-sm uppercase tracking-wider shadow-sm">
+                  <DollarSign className="w-4 h-4 text-emerald-600" />
                   Economize R$ {plan.savings}
                 </div>
               </div>
