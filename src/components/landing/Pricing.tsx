@@ -57,14 +57,13 @@ const Pricing = () => {
   };
 
   const handleUpsellConfirm = () => {
-    // Redireciona para o checkout do Premium com desconto ou plano normal
-    // Usando o link do premium fornecido pelo usuário
-    window.open("https://pay.lowify.com.br/checkout.php?product_id=FiBI79", '_blank');
+    // Redireciona para o checkout do Premium com o desconto especial de R$ 17,00
+    window.open("https://pay.lowify.com.br/checkout?product_id=KQYXDs", '_blank');
     setIsUpsellOpen(false);
   };
 
   const handleUpsellDecline = () => {
-    // Redireciona para o checkout do básico
+    // Redireciona para o checkout do plano básico (Essencial)
     window.open("https://pay.lowify.com.br/checkout?product_id=t70o0z", '_blank');
     setIsUpsellOpen(false);
   };
