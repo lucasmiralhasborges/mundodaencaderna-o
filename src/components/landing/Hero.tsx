@@ -3,16 +3,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
-import { Sparkles, CheckCircle2, Star, Zap } from 'lucide-react';
+import { Sparkles, CheckCircle2, Star, Zap, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
   const benefits = [
-    "Ideal para ateliês e iniciantes",
-    "Aplicação simples e imediata",
-    "Acesso vitalício",
-    "Sem pastas confusas",
-    "Sem arquivos duplicados",
-    "Sem material ultrapassado"
+    "Perfeito para iniciantes e ateliês",
+    "Baixe, imprima e comece a vender",
+    "Acesso vitalício + atualizações até 2026",
+    "Tudo organizado e fácil de encontrar",
+    "Arquivos únicos e selecionados",
+    "Conteúdo atualizado e moderno"
   ];
 
   const scrollToPricing = () => {
@@ -67,26 +67,43 @@ const Hero = () => {
               transition={{ delay: 0.15 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight"
             >
-              Transforme seu ateliê em uma <br className="hidden xl:block" />
+              Ganhe dinheiro com encadernação: <br className="hidden xl:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-500">
-                máquina de vendas
+                acervo com +100 mil arquivos prontos para imprimir e vender
               </span>
             </motion.h1>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-500 max-w-xl mx-auto lg:mx-0 font-medium"
-            >
-              Pare de perder horas criando do zero. Tenha acesso à biblioteca definitiva com mais de 100.000 arquivos organizados.
-            </motion.p>
+            <div className="space-y-6">
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-base sm:text-lg text-slate-500 max-w-xl mx-auto lg:mx-0 font-medium"
+              >
+                Pare de perder horas criando do zero. Tenha acesso à biblioteca definitiva com mais de 100.000 arquivos organizados, prontos para imprimir e montar.
+              </motion.p>
+
+              {/* Preço visível no topo */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.25 }}
+                className="space-y-1 bg-emerald-50/50 border-l-4 border-emerald-500 p-4 rounded-r-xl inline-block lg:block lg:max-w-md"
+              >
+                <p className="text-xl sm:text-2xl font-black text-emerald-600">
+                  Acesso vitalício por apenas R$27,90
+                </p>
+                <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  Atualizações garantidas até 2026 + acesso imediato.
+                </p>
+              </motion.div>
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="grid grid-cols-2 gap-3 max-w-lg mx-auto lg:mx-0"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto lg:mx-0"
             >
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex items-center gap-2.5 bg-slate-50/50 border border-slate-100 p-3 rounded-xl hover:border-emerald-200 transition-colors group">
@@ -98,54 +115,78 @@ const Hero = () => {
               ))}
             </motion.div>
 
-            {/* Imagem Promocional Adicionada Aqui */}
+            {/* Prova Social Curta Otimizada */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35 }}
-              className="relative max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-50"
-            >
-              <img 
-                src="/hero-promo.png" 
-                alt="Biblioteca Mundo da Encadernação" 
-                className="w-full h-auto"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="max-w-xs mx-auto lg:mx-0"
+              className="space-y-4 pt-8 border-t border-slate-100 max-w-xl mx-auto lg:mx-0 text-center lg:text-left"
             >
-              <CTAButton 
-                onClick={scrollToPricing}
-                subtext="Acesso imediato liberado"
-              >
-                QUERO MEU ACESSO
-              </CTAButton>
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-2">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map((i) => (
+                    <img key={i} src={`https://i.pravatar.cc/100?img=${i+20}`} className="w-8 h-8 rounded-full border-2 border-white shadow-sm" alt="User" />
+                  ))}
+                </div>
+                <div className="h-4 w-px bg-slate-200" />
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Feedback real</span>
+              </div>
+              
+              <div className="space-y-2">
+                <p className="text-slate-600 font-medium text-sm leading-relaxed italic">
+                  "Muita gente já está usando esse acervo para começar na encadernação do zero e vender todos os dias. Você não precisa ter experiência e nem saber editar nada."
+                </p>
+                <p className="text-emerald-600 font-black text-[11px] sm:text-xs uppercase tracking-[0.2em]">
+                  Quem começa primeiro, vende primeiro.
+                </p>
+              </div>
+
+              {/* CTA Extra após Prova Social */}
+              <div className="pt-4 max-w-xs mx-auto lg:mx-0">
+                <CTAButton 
+                  onClick={scrollToPricing}
+                  subtext="Garantia de satisfação de 15 dias"
+                >
+                  GARANTIR ACESSO AGORA
+                </CTAButton>
+              </div>
             </motion.div>
           </div>
 
-          <div className="relative flex items-center justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="bg-white/80 backdrop-blur-md border border-slate-100 rounded-[2.5rem] p-8 sm:p-10 shadow-xl max-w-sm mx-auto"
-            >
-              <div className="flex -space-x-2 justify-center mb-6">
-                {[1, 2, 3, 4].map((i) => (
-                  <img key={i} src={`https://i.pravatar.cc/100?img=${i+10}`} className="w-10 h-10 rounded-full border-2 border-white shadow-sm" alt="User" />
-                ))}
-              </div>
-              <div className="flex justify-center gap-0.5 mb-4">
-                {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
-              </div>
-              <p className="text-slate-600 text-sm font-medium text-center leading-relaxed">
-                Junte-se a <span className="text-slate-900 font-black">+15.000 alunos</span> que transformaram seus ateliês com resultados reais.
-              </p>
-            </motion.div>
+          <div className="relative flex items-center justify-center lg:h-full">
+            <div className="sticky top-24 space-y-8 w-full max-w-md">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="bg-white/80 backdrop-blur-md border border-slate-100 rounded-[2.5rem] p-8 sm:p-10 shadow-xl"
+              >
+                <div className="flex -space-x-2 justify-center mb-6">
+                  {[1, 2, 3, 4].map((i) => (
+                    <img key={i} src={`https://i.pravatar.cc/100?img=${i+10}`} className="w-10 h-10 rounded-full border-2 border-white shadow-sm" alt="User" />
+                  ))}
+                </div>
+                <div className="flex justify-center gap-0.5 mb-4">
+                  {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
+                </div>
+                <p className="text-slate-600 text-sm font-medium text-center leading-relaxed">
+                  Junte-se a <span className="text-slate-900 font-black">+15.000 alunos</span> que transformaram seus ateliês com resultados reais.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 }}
+                className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-slate-50"
+              >
+                <img 
+                  src="/hero-promo.png" 
+                  alt="Biblioteca Mundo da Encadernação" 
+                  className="w-full h-auto"
+                />
+              </motion.div>
+            </div>
           </div>
 
         </div>
