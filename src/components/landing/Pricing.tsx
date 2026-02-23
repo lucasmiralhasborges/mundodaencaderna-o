@@ -1,14 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Zap, Trophy, TrendingUp, X, Users, Star, DollarSign } from 'lucide-react';
-import UpsellModal from './UpsellModal';
+import { Check, Trophy, TrendingUp, X, Users, DollarSign } from 'lucide-react';
 
 const Pricing = () => {
-  const [isUpsellOpen, setIsUpsellOpen] = useState(false);
-
   const plans = [
     {
       id: "essencial",
@@ -48,35 +45,12 @@ const Pricing = () => {
     }
   ];
 
-  const handlePlanClick = (planId: string, checkoutUrl: string) => {
-    if (planId === 'essencial') {
-      setIsUpsellOpen(true);
-    } else {
-      window.open(checkoutUrl, '_blank');
-    }
-  };
-
-  const handleUpsellConfirm = () => {
-    // Redireciona para o checkout do Premium com o desconto especial de R$ 17,00
-    window.open("https://pay.lowify.com.br/checkout?product_id=KQYXDs", '_blank');
-    setIsUpsellOpen(false);
-  };
-
-  const handleUpsellDecline = () => {
-    // Redireciona para o checkout do plano básico (Essencial)
-    window.open("https://pay.lowify.com.br/checkout?product_id=t70o0z", '_blank');
-    setIsUpsellOpen(false);
+  const handlePlanClick = (checkoutUrl: string) => {
+    window.open(checkoutUrl, '_blank');
   };
 
   return (
     <section className="py-32 px-4 bg-white overflow-hidden relative">
-      <UpsellModal 
-        isOpen={isUpsellOpen} 
-        onClose={() => setIsUpsellOpen(false)}
-        onConfirm={handleUpsellConfirm}
-        onDecline={handleUpsellDecline}
-      />
-
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -154,7 +128,6 @@ const Pricing = () => {
                   </span>
                 </div>
 
-                {/* Savings Badge - Updated Style */}
                 <div className="inline-flex items-center gap-2.5 bg-emerald-50 border border-emerald-100 px-5 py-2.5 rounded-full text-emerald-700 font-black text-sm uppercase tracking-wider shadow-sm">
                   <DollarSign className="w-4 h-4 text-emerald-600" />
                   Economize R$ {plan.savings}
@@ -182,7 +155,7 @@ const Pricing = () => {
               </div>
 
               <CTAButton 
-                onClick={() => handlePlanClick(plan.id, plan.checkoutUrl)}
+                onClick={() => handlePlanClick(plan.checkoutUrl)}
                 variant={plan.highlight ? 'primary' : 'secondary'}
                 subtext={plan.highlight ? "O plano preferido dos alunos" : "Acesso imediato"}
               >
