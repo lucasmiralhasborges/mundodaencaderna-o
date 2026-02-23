@@ -59,7 +59,7 @@ const UpsellModal = ({ isOpen, onClose, onConfirm, onDecline }: UpsellModalProps
               <div className="bg-slate-50 rounded-3xl p-6 border border-slate-100 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/5 rounded-full -mr-8 -mt-8 blur-2xl" />
                 
-                <p className="text-slate-400 font-bold text-xs line-through mb-1">De R$ 27,90</p>
+                <p className="text-slate-400 font-bold text-xs line-through mb-1">De R$ 19,90</p>
                 <p className="text-slate-600 font-bold text-sm mb-1">Por apenas</p>
                 <div className="flex items-baseline justify-center gap-1">
                   <span className="text-emerald-600 text-2xl font-black">R$</span>

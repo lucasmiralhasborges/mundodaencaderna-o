@@ -91,7 +91,7 @@ const Hero = () => {
                 className="space-y-1 bg-emerald-50/50 border-l-4 border-emerald-500 p-4 rounded-r-xl inline-block lg:block lg:max-w-md"
               >
                 <p className="text-xl sm:text-2xl font-black text-emerald-600">
-                  Acesso vitalício por apenas R$27,90
+                  Acesso vitalício por apenas R$19,90
                 </p>
                 <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
                   Atualizações garantidas até 2026 + acesso imediato.
@@ -170,7 +170,7 @@ const Hero = () => {
                   {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
                 </div>
                 <p className="text-slate-600 text-sm font-medium text-center leading-relaxed">
-                  Junte-se a <span className="text-slate-900 font-black">+15.000 alunos</span> que transformaram seus ateliês com resultados reais.
+                  Junte-se a <span className="text-slate-900 font-black">+15.000 alunos</span> que transformaram seus ateliês with resultados reais.
                 </p>
               </motion.div>
 
